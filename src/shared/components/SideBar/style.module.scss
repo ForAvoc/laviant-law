@@ -1,8 +1,16 @@
+@import '../../../assets/scss/mixins';
+
 .side-bar {
-  position: fixed;
-  top: 100px;
-  width: 20%;
-  min-width: 250px;
-  min-height: 100vh;
-  background-color: orange;
+
+  &__paper{
+
+    @include maxW_1280{
+      margin-top: 100px;
+    }
+
+    @include maxW_720{
+      width: 100% !important;
+      height: 100vh !important;
+    }
+  }
 }

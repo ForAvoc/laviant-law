@@ -1,7 +1,18 @@
+@import '../../../assets/scss/mixins';
+
 .header {
   position: sticky;
   top: 0;
   width: 100%;
   height: 100px;
-  background-color: red;
+  z-index: 1999;
+  background-color: white;
+
+  &__burger{
+    display: none !important;
+
+    @include maxW_1280{
+      display: block !important;
+    }
+  }
 }

@@ -3,11 +3,16 @@ import s from './style.module.scss';
 import Header from '../Header';
 import SideBar from '../SideBar';
 
-const MainPageLayout = ({children}) => (
+const MainPageLayout = ({children, setIsSideBarOpened, isSideBarOpened, isSideBarTemporary, isSideBarVertical}) => (
   <div className={s['main-page-layout']}>
-    <Header />
+    <Header isSideBarOpened={isSideBarOpened} setIsSideBarOpened={setIsSideBarOpened} />
     <div className={s['main-page-layout__body']}>
-      <SideBar />
+      <SideBar
+        isOpened={isSideBarOpened}
+        setIsSideBarOpened={setIsSideBarOpened}
+        isTemporary={isSideBarTemporary}
+        isVertical={isSideBarVertical}
+      />
       <div className={s['main-page-layout__content']}>{children}</div>
     </div>
   </div>
