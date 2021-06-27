@@ -14,6 +14,7 @@ module.exports = {
   plugins: ['react', 'prettier'],
   rules: {
     'no-use-before-define': 'off',
+    'react/prop-types': 'off',
     'prettier/prettier': [
       'error',
       {
