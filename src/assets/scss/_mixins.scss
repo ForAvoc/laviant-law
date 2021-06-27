@@ -1,0 +1,65 @@
+/* Using instruction */
+
+//.className
+//   +maxW_1536
+//      property: value
+
+@mixin maxW_1920 {
+  @media (max-width: 1920px) {
+    @content;
+  }
+}
+
+@mixin maxW_1536 {
+  @media (max-width: 1536px) {
+    @content;
+  }
+}
+
+@mixin maxW_1440 {
+  @media (max-width: 1440px) {
+    @content;
+  }
+}
+
+@mixin maxW_1366 {
+  @media (max-width: 1366px) {
+    @content;
+  }
+}
+
+@mixin maxW_1280 {
+  @media (max-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin maxW_1080 {
+  @media (max-width: 1080px) {
+    @content;
+  }
+}
+
+@mixin maxW_900 {
+  @media (max-width: 900px) {
+    @content;
+  }
+}
+
+@mixin maxW_864 {
+  @media (max-width: 864px) {
+    @content;
+  }
+}
+
+@mixin maxW_748 {
+  @media (max-width: 748px) {
+    @content;
+  }
+}
+
+@mixin maxW_720 {
+  @media (max-width: 720px) {
+    @content;
+  }
+}
