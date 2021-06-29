@@ -1,25 +1,19 @@
 import React from 'react';
 import cx from 'classnames';
+
 import {makeStyles} from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import List from '@material-ui/core/List';
-import Divider from '@material-ui/core/Divider';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import InboxIcon from '@material-ui/icons/MoveToInbox';
-import MailIcon from '@material-ui/icons/Mail';
 import s from './style.module.scss';
+import SitebarListItem from './SideBarListItem';
 
-const drawerWidth = 240;
+import {sidebarListItems} from './staticValues';
+
+const drawerWidth = 300;
 
 const useStyles = makeStyles(() => ({
   root: {
     display: 'flex',
-  },
-  appBar: {
-    width: `calc(100% - ${drawerWidth}px)`,
-    marginRight: drawerWidth,
   },
   drawer: {
     width: drawerWidth,
@@ -28,11 +22,19 @@ const useStyles = makeStyles(() => ({
   drawerPaper: {
     width: drawerWidth,
     top: 'auto',
+    borderRight: 0,
   },
 }));
 
 const SideBar = ({isOpened, setIsSideBarOpened, isTemporary, isVertical}) => {
   const classes = useStyles();
+  const [isSideBarListSelected, setIsSideBarListSelected] = React.useState();
+
+  const handleListItemClick = (i) => {
+    setIsSideBarListSelected(i);
+    // ?????
+    // setIsSideBarOpened(false);
+  };
 
   return (
     <div className={classes.root}>
@@ -46,21 +48,18 @@ const SideBar = ({isOpened, setIsSideBarOpened, isTemporary, isVertical}) => {
         anchor={isVertical ? 'top' : 'left'}
         open={isOpened}
       >
-        <List>
-          {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-        </List>
-        <Divider />
-        <List>
-          {['All mail', 'Trash', 'Spam'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
+        <List
+          classes={{
+            padding: s['side-bar__list'],
+          }}
+        >
+          {sidebarListItems.map((text, i) => (
+            <SitebarListItem
+              text={text}
+              index={i}
+              selectedItem={isSideBarListSelected}
+              handleListItemClick={handleListItemClick}
+            />
           ))}
         </List>
       </Drawer>

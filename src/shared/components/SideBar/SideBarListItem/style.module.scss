@@ -1,0 +1,35 @@
+@import '../../../../assets/scss/variables';
+@import '../../../../assets/scss/fonts';
+
+.listItem{
+    color: $text-color;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: color, background-color .3s ease;
+    &__text{
+        span{
+            font-size: 17px !important;
+            font-weight: 500;
+        }
+    }
+    //?????
+    &__arrowIcon{
+        opacity: 0;
+        &__active{
+            opacity: 1;
+        }
+    }
+    
+    &:hover{
+        color: $white;
+        background-color: $gray !important;
+        border-right: 4px solid $vine-red;
+    }
+
+}
+
+.selectedItem{
+    background-color: $gray !important;
+    color: $white !important;
+    border-right: 4px solid $vine-red!important;
+}
