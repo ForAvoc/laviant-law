@@ -15,6 +15,7 @@ module.exports = {
   rules: {
     'no-use-before-define': 'off',
     'react/prop-types': 'off',
+    'react/button-has-type': 'off',
     'prettier/prettier': [
       'error',
       {
