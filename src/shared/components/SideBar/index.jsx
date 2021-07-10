@@ -1,13 +1,11 @@
-import React from 'react';
+import React, {useState} from 'react';
 import cx from 'classnames';
-
 import {makeStyles} from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import List from '@material-ui/core/List';
 import s from './style.module.scss';
 import SitebarListItem from './SideBarListItem';
-
-import {sidebarListItems} from './staticValues';
+import ROUTERS from '../../../core/_consts/routes';
 
 const drawerWidth = 300;
 
@@ -27,14 +25,21 @@ const useStyles = makeStyles(() => ({
 }));
 
 const SideBar = ({isOpened, setIsSideBarOpened, isTemporary, isVertical}) => {
-  const classes = useStyles();
-  const [isSideBarListSelected, setIsSideBarListSelected] = React.useState();
+  const [sidebarItems] = useState([
+    {name: 'Главная', path: ROUTERS.HOME},
+    'Публикации',
+    'Регистрация бизнеса',
+    'Внесения изменений в ЕДР',
+    'Купить компанию',
+    'Получить лицензию',
+    'Регистрация торговых марок',
+    'Миграционное право',
+    'Регистрация бизнеса в инностраный юрисдикциях',
+    'Сопровождения бизнеса',
+    'Ликвидация компаний',
+  ]);
 
-  const handleListItemClick = (i) => {
-    setIsSideBarListSelected(i);
-    // ?????
-    // setIsSideBarOpened(false);
-  };
+  const classes = useStyles();
 
   return (
     <div className={classes.root}>
@@ -53,13 +58,8 @@ const SideBar = ({isOpened, setIsSideBarOpened, isTemporary, isVertical}) => {
             padding: s['side-bar__list'],
           }}
         >
-          {sidebarListItems.map((text, i) => (
-            <SitebarListItem
-              text={text}
-              index={i}
-              selectedItem={isSideBarListSelected}
-              handleListItemClick={handleListItemClick}
-            />
+          {sidebarItems.map((item) => (
+            <SitebarListItem name={item.name} path={item.path} key={item.name} />
           ))}
         </List>
       </Drawer>
