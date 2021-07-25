@@ -1,10 +1,17 @@
 import React, {useState} from 'react';
+// Material UI
+import {makeStyles, List, Drawer} from '@material-ui/core';
+// CX
 import cx from 'classnames';
-import {makeStyles} from '@material-ui/core/styles';
-import Drawer from '@material-ui/core/Drawer';
-import List from '@material-ui/core/List';
+// Redux
+import {connect} from 'react-redux';
+import {selectorGetSideBarState} from '../../../store/sidebar-service/selector';
+import {actionSetSidebarState} from '../../../store/sidebar-service/actions';
+// Styles
 import s from './style.module.scss';
+// Components
 import SitebarListItem from './SideBarListItem';
+//
 import ROUTERS from '../../../core/_consts/routes';
 
 const drawerWidth = 300;
@@ -20,11 +27,12 @@ const useStyles = makeStyles(() => ({
   drawerPaper: {
     width: drawerWidth,
     top: 'auto',
+    left: '25px',
     borderRight: 0,
   },
 }));
 
-const SideBar = ({isOpened, setIsSideBarOpened, isTemporary, isVertical}) => {
+const SideBar = ({sideBarState, setSidebarState, isTemporary, isVertical}) => {
   const [sidebarItems] = useState([
     {name: 'Главная', path: ROUTERS.HOME},
     'Публикации',
@@ -45,13 +53,13 @@ const SideBar = ({isOpened, setIsSideBarOpened, isTemporary, isVertical}) => {
     <div className={classes.root}>
       <Drawer
         className={classes.drawer}
-        onBackdropClick={() => setIsSideBarOpened(false)}
+        onBackdropClick={() => setSidebarState(false)}
         variant={isTemporary ? 'temporary' : 'permanent'}
         classes={{
           paper: cx(classes.drawerPaper, s['side-bar__paper']),
         }}
         anchor={isVertical ? 'top' : 'left'}
-        open={isOpened}
+        open={sideBarState}
       >
         <List
           classes={{
@@ -66,4 +74,15 @@ const SideBar = ({isOpened, setIsSideBarOpened, isTemporary, isVertical}) => {
     </div>
   );
 };
-export default SideBar;
+
+const mapStateToProps = (store) => ({
+  sideBarState: selectorGetSideBarState(store),
+});
+
+const mapDispatchToProps = {
+  setSidebarState: actionSetSidebarState,
+};
+
+const connector = connect(mapStateToProps, mapDispatchToProps);
+
+export default connector(SideBar);

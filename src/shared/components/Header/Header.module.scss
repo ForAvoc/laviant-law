@@ -1,0 +1,147 @@
+@import '../../../assets/scss/mixins';
+@import '../../../assets/scss/variables';
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100px;
+  padding: 0 40px 0 25px;
+
+  &__left {
+    display: flex;
+    align-items: center;
+
+    @include maxW_748 {
+      flex: 1;
+    }
+  }
+
+  &__logo {
+    width: 100px;
+    height: 100px;
+
+    @include maxW_1280 {
+      display: none;
+    }
+
+    @include maxW_748 {
+      display: block;
+      margin: 0 auto;
+    }
+  }
+
+  &__adress {
+    display: flex;
+    align-items: center;
+    position: relative;
+    font-size: 20px;
+    color: $gray;
+    font-weight: 300;
+    margin-left: 20px;
+
+    @include maxW_748 {
+      display: none;
+    }
+
+    &:hover {
+      a {
+        opacity: 1;
+        bottom: -23px;
+        height: 30px;
+      }
+    }
+
+    a {
+      z-index: 1 !important;
+      position: absolute;
+      display: flex;
+      align-items: center;
+      right: 0;
+      bottom: 0;
+      padding: 2px;
+      opacity: 0;
+      border-radius: 5px;
+      font-size: 14px;
+      color: $gray;
+      text-decoration: none !important;
+      transition: all 0.5s ease;
+
+      &:hover {
+        color: $main-purple;
+      }
+
+      svg {
+        height: 17px;
+      }
+    }
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+  }
+
+  &__contacts {
+    display: flex;
+
+    @include maxW_1280 {
+      flex-direction: column;
+    }
+
+    @include maxW_748 {
+      display: none;
+    }
+
+    a {
+      display: flex;
+      align-items: flex-end;
+      margin: 0 20px;
+      text-decoration: none !important;
+      color: $gray;
+      font-size: 17px;
+      font-weight: 500;
+      margin-bottom: 5px;
+
+      @include maxW_1280 {
+        font-size: 14px;
+        font-weight: 400;
+      }
+
+      &:hover {
+        svg {
+          color: $main-purple;
+        }
+
+        span {
+          color: $main-purple;
+
+          &::before {
+            opacity: 1;
+            width: 110%;
+          }
+        }
+      }
+
+      span {
+        position: relative;
+
+        &::before {
+          position: absolute;
+          opacity: 0.7;
+          content: '';
+          bottom: 0;
+          left: -18px;
+          height: 1px;
+          width: 0;
+          background-color: $main-purple;
+          transition: 0.5s ease;
+        }
+      }
+
+      svg {
+        font-size: 19px !important;
+      }
+    }
+  }
+}

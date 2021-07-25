@@ -14,12 +14,12 @@
   &:hover {
     color: $white;
     background-color: $gray ;
-    border-right: 4px solid $vine-red;
+    border-right: 4px solid $main-purple;
   }
 
   &__selectedItem {
-    background-color: $gray ;
+    background-color: rgba(128, 128, 128, 0.6) ;
     color: $white ;
-    border-right: 4px solid $vine-red ;
+    border-right: 4px solid $main-purple ;
   }
 }
