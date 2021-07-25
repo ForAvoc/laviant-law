@@ -10,6 +10,7 @@ import MailOutlineIcon from '@material-ui/icons/MailOutline';
 // Redux
 import {connect} from 'react-redux';
 import {actionSetSidebarState} from '../../../store/sidebar-service/actions';
+import {actionSetModalState} from '../../../store/modal-service/actions';
 // Components
 import {ReactComponent as LogoIcon} from '../../media/Logo.svg';
 // Styles
@@ -70,7 +71,7 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-const Header = ({setSidebarState}) => {
+const Header = ({setSidebarState, setModalState}) => {
   const classes = useStyles();
   return (
     <div className={s.header}>
@@ -103,7 +104,9 @@ const Header = ({setSidebarState}) => {
             <span>laviantlaw@gmail.com</span>
           </Link>
         </div>
-        <Button className={classes.button}>Заказать звонок</Button>
+        <Button className={classes.button} onClick={() => setModalState(true)}>
+          Заказать звонок
+        </Button>
         <Button className={classes.minifiedButton}>
           <PhoneEnabledIcon className={classes.phoneEnabledIcon} />
         </Button>
@@ -114,6 +117,7 @@ const Header = ({setSidebarState}) => {
 
 const mapDispatchToProps = {
   setSidebarState: actionSetSidebarState,
+  setModalState: actionSetModalState,
 };
 
 const connector = connect(null, mapDispatchToProps);
