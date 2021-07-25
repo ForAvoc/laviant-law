@@ -5,6 +5,7 @@ import s from './App.module.scss';
 import SideBar from './shared/components/SideBar';
 import HomePage from './pages/HomePage';
 import Header from './shared/components/Header';
+import CallbackModal from './shared/components/CallbackModal';
 
 function App() {
   const [isSideBarTemporary, setIsSideBarTemporary] = useState(false);
@@ -50,6 +51,7 @@ function App() {
           </Switch>
         </div>
       </div>
+      <CallbackModal />
     </div>
   );
 }
