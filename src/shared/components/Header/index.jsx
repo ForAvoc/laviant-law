@@ -1,6 +1,9 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from 'react';
+import {Link} from 'react-router-dom';
 // Material UI
-import {Button, Link, makeStyles, IconButton} from '@material-ui/core';
+import {Button, makeStyles, IconButton} from '@material-ui/core';
 import PhoneEnabledIcon from '@material-ui/icons/PhoneEnabled';
 import MenuIcon from '@material-ui/icons/Menu';
 import LocationOnIcon from '@material-ui/icons/LocationOn';
@@ -13,8 +16,10 @@ import {actionSetSidebarState} from '../../../store/sidebar-service/actions';
 import {actionSetModalState} from '../../../store/modal-service/actions';
 // Components
 import {ReactComponent as LogoIcon} from '../../media/Logo.svg';
+import CustomButton from '../CustomButton';
 // Styles
 import s from './Header.module.scss';
+import ROUTERS from '../../../core/_consts/routes';
 
 const useStyles = makeStyles(() => ({
   button: {
@@ -37,16 +42,8 @@ const useStyles = makeStyles(() => ({
       display: 'none',
     },
   },
-  minifiedButton: {
+  minifiedButtonHeader: {
     display: 'none',
-    padding: '10px 5px',
-    marginLeft: '40px',
-    borderRadius: '0px',
-    fontSize: '12px',
-    fontWeight: 700,
-    backgroundColor: '#8B00FF',
-    border: '1px solid #8B00FF',
-    color: 'white',
     '&:hover': {
       backgroundColor: 'white',
       color: '#8B00FF',
@@ -69,6 +66,9 @@ const useStyles = makeStyles(() => ({
       alignItems: 'center',
     },
   },
+  buttonWrapper: {
+    overflow: 'hidden',
+  },
 }));
 
 const Header = ({setSidebarState, setModalState}) => {
@@ -79,7 +79,9 @@ const Header = ({setSidebarState, setModalState}) => {
         <IconButton className={classes.burger} onClick={() => setSidebarState(true)}>
           <MenuIcon />
         </IconButton>
-        <LogoIcon className={s.header__logo} />
+        <Link to={ROUTERS.HOME} className={s.header__logo}>
+          <LogoIcon className={s.header__logo__img} />
+        </Link>
         <div className={s.header__adress}>
           <LocationOnIcon />
           <span>Г. Киев ул. Пушкина 12/2</span>
@@ -99,17 +101,20 @@ const Header = ({setSidebarState, setModalState}) => {
             <PhoneInTalkIcon />
             <span>+380-63 258-20-09</span>
           </Link>
-          <Link href="mailto:alenyata@gmail.com">
+          <Link href="mailto:laviant.law.firm@gmail.com">
             <MailOutlineIcon />
-            <span>laviantlaw@gmail.com</span>
+            <span>laviant.law.firm@gmail.com</span>
           </Link>
         </div>
+
         <Button className={classes.button} onClick={() => setModalState(true)}>
           Заказать звонок
         </Button>
-        <Button className={classes.minifiedButton}>
-          <PhoneEnabledIcon className={classes.phoneEnabledIcon} />
-        </Button>
+        <CustomButton
+          Icon={PhoneEnabledIcon}
+          classNameBtn={classes.minifiedButtonHeader}
+          onClick={() => setModalState(true)}
+        />
       </div>
     </div>
   );

@@ -1,18 +1,22 @@
-.app{
-    display: flex;
+html{
+  scroll-behavior: smooth;
+}
+
+.app {
+  display: flex;
   flex-direction: column;
   width: 100%;
   min-height: 100vh;
+  // background-color: rgb(245, 119, 119);
 
-  &__body{
+  &__body {
     display: flex;
     width: 100%;
     flex: 1;
   }
 
   &__content {
-    display: flex;
-    flex: 1;
-    background-color: green;
+    width: 100%;
+    padding: 0 25px;
   }
 }

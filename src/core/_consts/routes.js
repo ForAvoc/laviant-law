@@ -1,6 +1,5 @@
 const ROUTERS = {
   HOME: '/',
-  BOARD: '/board',
   PUBLICATIONS: '/publication',
   REGISTER_BUSINESS: '/register-business',
   CHANGE_EDR: '/change-edr',

@@ -1,5 +1,6 @@
 @import '../../../../assets/scss/variables';
 @import '../../../../assets/scss/fonts';
+@import '../../../../assets/scss/mixins';
 
 .listItem {
   display: flex;
@@ -10,16 +11,19 @@
   color: $text-color;
   transition: color, background-color 0.3s ease;
 
+  @include maxW_480 {
+    justify-content: center;
+  }
 
   &:hover {
     color: $white;
-    background-color: $gray ;
+    background-color: $gray;
     border-right: 4px solid $main-purple;
   }
 
   &__selectedItem {
-    background-color: rgba(128, 128, 128, 0.6) ;
-    color: $white ;
-    border-right: 4px solid $main-purple ;
+    background-color: rgba(128, 128, 128, 0.6);
+    color: $white;
+    border-right: 4px solid $main-purple;
   }
 }
