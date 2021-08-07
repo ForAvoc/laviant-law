@@ -2,7 +2,6 @@ import React from 'react';
 // Material UI
 import {Typography, makeStyles} from '@material-ui/core';
 import CheckIcon from '@material-ui/icons/Check';
-// import MenuBookIcon from '@material-ui/icons/MenuBook';
 // Component
 import cx from 'classnames';
 import HomePageSlider from './slider';

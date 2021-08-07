@@ -5,17 +5,24 @@
   position: relative;
   width: 100%;
   height: 400px;
+
   @include maxW_1080 {
     height: 350px;
   }
+
   &__arrow {
-      position: absolute;
-      bottom: -45px;
-      left: 0;
-      z-index: 2;
-      &-forward{
-        left: 64px;
-      }
+    position: absolute;
+    bottom: -45px;
+    left: 0;
+    z-index: 2;
+
+    &-forward {
+      left: 64px;
+    }
+
+    @include maxW_480 {
+      display: none;
+    }
   }
 
   &__dots {
@@ -89,7 +96,7 @@
       color: $white;
     }
   }
-  
+
   &:hover {
     .content {
       opacity: 1;
@@ -119,7 +126,7 @@
   text-align: center;
   opacity: 0;
   transition: all 0.4s ease;
-  &__heading{
+  &__heading {
     font-size: 30px;
     @include maxW_748 {
       font-size: 25px;
@@ -136,7 +143,7 @@
     @include maxW_550 {
       font-size: 17px;
     }
-    
+
     // @include maxW_748 {
     //   flex: 0 1 auto;
     //       margin: 0; /* Убираем внешний отступ */
@@ -145,7 +152,6 @@
     // -webkit-box-orient: vertical; /* Вертикальная ориентация */
     // overflow: hidden; /* Обрезаем всё за пределами блока */
     // }
-
   }
 
   &__button {
@@ -159,7 +165,3 @@
     }
   }
 }
-
-
-
-

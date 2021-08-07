@@ -2,17 +2,14 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, {useEffect, useRef} from 'react';
 import cx from 'classnames';
-// import {Button} from '@material-ui/core';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
-
 // Components
 import CustomButton from '../../../shared/components/CustomButton';
 // Media
 import firstFoto from '../../../shared/media/mainPageSlider/first.jpg';
 import secondFoto from '../../../shared/media/mainPageSlider/second.jpg';
 import thirdFoto from '../../../shared/media/mainPageSlider/third.jpg';
-
 // Styles
 import styles from './style.module.scss';
 
@@ -98,7 +95,6 @@ const HomePageSlider = () => {
       >
         <CustomButton Icon={ArrowForwardIosIcon} />
       </div>
-
       <div className={styles.Slider__dots}>
         {letsgo.map((_, index) => (
           <div

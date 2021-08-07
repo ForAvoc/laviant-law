@@ -33,7 +33,6 @@ const useStyles = makeStyles(() => ({
     },
     '@media (max-width: 480px)': {
       width: '100%',
-      height: '100vh',
     },
   },
   list: {
@@ -41,11 +40,10 @@ const useStyles = makeStyles(() => ({
   },
   closeButton: {
     display: 'none',
-    position: 'absolute',
-    bottom: '10px',
-    borderRadius: '0px',
+    borderRadius: '5px',
     fontWeight: 600,
     color: '#8B00FF',
+    marginBottom: '20px',
     '@media (max-width: 480px)': {
       display: 'block',
     },
