@@ -22,9 +22,14 @@ import s from './style.module.scss';
 
 const useStyles = makeStyles(() => ({
   paragraph: {
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '10px',
     marginBottom: '30px',
   },
   list: {
+    display: 'flex',
+    flexDirection: 'column',
     padding: '0',
   },
 }));
@@ -70,11 +75,13 @@ const HomePage = () => {
   const classes = useStyles();
   return (
     <div className={s.homePage}>
-      <h1 className={s.homePage__title}>
-        Правовая помощь и Консалтинговые услуги
-        <br /> для <span className={s.linkSpan}>Юридических, Физических</span> лиц и{' '}
-        <span className={s.linkSpan}>Нерезидентов</span>
-      </h1>
+      <div className={s.homePage__title}>
+        <p>Правовая помощь и Консалтинговые услуги</p>
+        <p>
+          для <span className={s.linkSpan}>Юридических, Физических</span> лиц и{' '}
+          <span className={s.linkSpan}>Нерезидентов</span>
+        </p>
+      </div>
       <HomePageSlider />
       <div className={s.aboutCompany}>
         <Typography className={classes.paragraph} variant="subtitle1">
@@ -90,14 +97,14 @@ const HomePage = () => {
           боли, связанной с юридическим и бухгалтерским сопровождениям деятельности, что позволит вам сфокусироваться на
           самой компании, над ее развитием и масштабизацией вашего дела.
         </Typography>
-        <Typography className={cx(classes.paragraph, s.ourBenefitsWrapper)} variant="subtitle1">
-          <span className={cx(s.strongSpan, s.ourBenefitsWrapper__heading)}>В чем наши преимущества?</span>
-          <ul className={classes.list}>
-            {ourBenefits.map((item) => (
-              <OurBenefits Icon={item.icon} heading={item.text} description="" />
-            ))}
-          </ul>
-        </Typography>
+        {/* <Typography className={cx(classes.paragraph, s.ourBenefitsWrapper)} variant="subtitle1"> */}
+        <span className={cx(s.strongSpan, s.ourBenefitsWrapper__heading)}>В чем наши преимущества?</span>
+        <ul className={classes.list}>
+          {ourBenefits.map((item) => (
+            <OurBenefits Icon={item.icon} heading={item.text} description="" />
+          ))}
+        </ul>
+        {/* </Typography> */}
         <Typography className={classes.paragraph} variant="subtitle1">
           <span className={s.strongSpan}>
             Мы предоставляем качественные услуги для физических и юридических лиц такие как:

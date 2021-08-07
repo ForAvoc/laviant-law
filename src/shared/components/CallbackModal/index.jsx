@@ -20,6 +20,7 @@ const useStyles = makeStyles(() => ({
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+    margin: '0 15px',
   },
   formButton: {
     '& .MuiButton': {
@@ -68,7 +69,6 @@ const CallbackModal = ({modalState, setModalState}) => {
       }}
     >
       <Fade in={modalState}>
-        {/* ?????? */}
         <div className={cx(s.popup__content)}>
           <CloseIcon className={s.popup__closeIcon} onClick={handleClose} />
           <Logo className={s.popup__logo} />

@@ -1,42 +1,41 @@
 @import '../../../assets/scss/variables';
 
-
-.popup{
-    &__content{
-        outline: none;
-        overflow: hidden;
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        background-color: #fff;
-        padding: 30px;
-        color: $text-color;
-        max-width: 650px;
-        transition: all .7s ease !important;
+.popup {
+  &__content {
+    outline: none;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    padding: 30px;
+    color: $text-color;
+    max-width: 650px;
+    transition: all 0.7s ease !important;
+  }
+  &__title {
+    margin: 20px;
+    text-align: center;
+    font-size: 15px;
+  }
+  &__closeIcon {
+    cursor: pointer;
+    margin: 0;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    padding: 5px;
+    &:hover {
+      color: rgb(163, 32, 32);
     }
-    &__title{
-            text-align: center;
-            font-size: 15px;
-    }
-    &__closeIcon{
-        cursor: pointer;
-        margin: 0;
-        position: absolute;
-        right: 10px;
-        top: 10px;
-        padding: 5px;
-        &:hover{
-            color: rgb(163, 32, 32);
-        }
-    }
-    &__logo{
-        height: 100px;
-        width: 100%;
-        margin: -35px 0;
-    }
-    &__callbackForm{
-        display: flex;
-        flex-direction: column;  
-    }
+  }
+  &__logo {
+    height: 100px;
+    width: 100%;
+    margin: -35px 0;
+  }
+  &__callbackForm {
+    display: flex;
+    flex-direction: column;
+  }
 }
-

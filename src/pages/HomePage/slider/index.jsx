@@ -58,7 +58,6 @@ const HomePageSlider = () => {
     setActive(value);
     setInterval();
   };
-  const btnText = 'Подробнее';
 
   return (
     <div className={styles.Slider}>
@@ -84,7 +83,7 @@ const HomePageSlider = () => {
             >
               <h2 className={styles.content__heading}>{item.name}</h2>
               <p className={styles.content__text}>{item.text}</p>
-              <CustomButton classNameBtn={styles.content__button} text={btnText} />
+              <CustomButton classNameBtn={styles.content__button} text="Подробнее" />
             </div>
           </div>
         </div>

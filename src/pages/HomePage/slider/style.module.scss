@@ -46,7 +46,6 @@
     }
   }
 }
-//Slider item
 .container {
   position: absolute;
   width: 100%;
@@ -55,7 +54,6 @@
 
 .wrapper {
   opacity: 0;
-  // border-radius: 10px;
   position: relative;
   margin: 0;
   padding: 0;
@@ -143,15 +141,6 @@
     @include maxW_550 {
       font-size: 17px;
     }
-
-    // @include maxW_748 {
-    //   flex: 0 1 auto;
-    //       margin: 0; /* Убираем внешний отступ */
-    // -webkit-line-clamp: 2; /* Число отображаемых строк */
-    // display: -webkit-box; /* Включаем флексбоксы */
-    // -webkit-box-orient: vertical; /* Вертикальная ориентация */
-    // overflow: hidden; /* Обрезаем всё за пределами блока */
-    // }
   }
 
   &__button {
@@ -160,8 +149,13 @@
     font-weight: 400 !important;
     color: $white !important;
     transition: color 0.3s !important;
+
     &:hover {
       color: $main-purple !important;
+    }
+
+    @include maxW_480 {
+      align-self: center;
     }
   }
 }
