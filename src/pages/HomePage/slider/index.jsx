@@ -65,10 +65,10 @@ const HomePageSlider = () => {
 
   return (
     <div className={styles.Slider}>
-      <div
-        className={cx(styles.Slider__arrow, styles['Slider__arrow-back'])}
-        onClick={() => handleClick(active === 0 ? letsgo.length - 1 : active - 1)}
-      />
+      <div className={styles.Slider__arrow} onClick={() => handleClick(active === 0 ? letsgo.length - 1 : active - 1)}>
+        <CustomButton Icon={ArrowBackIosIcon} />
+      </div>
+
       {letsgo.map((item, index) => (
         <div className={styles.container}>
           <div
@@ -96,7 +96,6 @@ const HomePageSlider = () => {
         className={cx(styles.Slider__arrow, styles['Slider__arrow-forward'])}
         onClick={() => handleClick(active === letsgo.length - 1 ? 0 : active + 1)}
       >
-        <CustomButton Icon={ArrowBackIosIcon} />
         <CustomButton Icon={ArrowForwardIosIcon} />
       </div>
 
