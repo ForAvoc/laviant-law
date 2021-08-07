@@ -12,7 +12,10 @@
       position: absolute;
       bottom: -45px;
       left: 0;
-    z-index: 2;
+      z-index: 2;
+      &-forward{
+        left: 64px;
+      }
   }
 
   &__dots {
