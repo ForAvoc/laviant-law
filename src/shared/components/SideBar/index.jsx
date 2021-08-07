@@ -1,8 +1,7 @@
-import React, {useState} from 'react';
+import React, {useState, useLayoutEffect, useEffect} from 'react';
 // Material UI
-import {makeStyles, List, Drawer} from '@material-ui/core';
-// CX
-import cx from 'classnames';
+import {makeStyles, List, Drawer, Button, IconButton} from '@material-ui/core';
+import CloseIcon from '@material-ui/icons/Close';
 // Redux
 import {connect} from 'react-redux';
 import {selectorGetSideBarState} from '../../../store/sidebar-service/selector';
@@ -11,65 +10,127 @@ import {actionSetSidebarState} from '../../../store/sidebar-service/actions';
 import s from './style.module.scss';
 // Components
 import SitebarListItem from './SideBarListItem';
+import {ReactComponent as LogoIcon} from '../../media/Logo.svg';
 //
 import ROUTERS from '../../../core/_consts/routes';
 
 const drawerWidth = 300;
 
 const useStyles = makeStyles(() => ({
-  root: {
-    display: 'flex',
-  },
   drawer: {
     width: drawerWidth,
     flexShrink: 0,
   },
   drawerPaper: {
+    display: 'flex',
+    alignItems: 'center',
     width: drawerWidth,
     top: 'auto',
-    left: '25px',
+    paddingLeft: '25px',
     borderRight: 0,
+    '@media (max-width: 1280px)': {
+      paddingLeft: '0px',
+    },
+    '@media (max-width: 480px)': {
+      width: '100%',
+      height: '100vh',
+    },
+  },
+  list: {
+    width: '100%',
+  },
+  closeButton: {
+    display: 'none',
+    position: 'absolute',
+    bottom: '10px',
+    borderRadius: '0px',
+    fontWeight: 600,
+    color: '#8B00FF',
+    '@media (max-width: 480px)': {
+      display: 'block',
+    },
+  },
+  closeIcon: {
+    position: 'absolute',
+    top: '5px',
+    right: '5px',
   },
 }));
 
-const SideBar = ({sideBarState, setSidebarState, isTemporary, isVertical}) => {
+const SideBar = ({sideBarState, setSidebarState}) => {
   const [sidebarItems] = useState([
     {name: 'Главная', path: ROUTERS.HOME},
-    'Публикации',
-    'Регистрация бизнеса',
-    'Внесения изменений в ЕДР',
-    'Купить компанию',
-    'Получить лицензию',
-    'Регистрация торговых марок',
-    'Миграционное право',
-    'Регистрация бизнеса в инностраный юрисдикциях',
-    'Сопровождения бизнеса',
-    'Ликвидация компаний',
+    {name: 'Публикации', path: ROUTERS.PUBLICATIONS},
+    {name: 'Регистрация бизнеса', path: ROUTERS.REGISTER_BUSINESS},
+    {name: 'Внесения изменений в ЕДР', path: ROUTERS.CHANGE_EDR},
+    {name: 'Купить компанию', path: ROUTERS.BUY_COMPANY},
+    {name: 'Получить лицензию', path: ROUTERS.GET_LICENSE},
+    {name: 'Регистрация торговых марок', path: ROUTERS.REGISTER_TRADEMARK},
+    {name: 'Миграционное право', path: ROUTERS.MIGRATION_LAW},
+    {name: 'Регистрация бизнеса в инностраный юрисдикциях', path: ROUTERS.REGITER_BUSINESS_ABROAD},
+    {name: 'Сопровождения бизнеса', path: ROUTERS.BUSINESS_SUPPORT},
+    {name: 'Ликвидация компаний', path: ROUTERS.COMPANY_LIQUIDATION},
   ]);
-
+  const [isSideBarTemporary, setIsSideBarTemporary] = useState(false);
   const classes = useStyles();
 
+  // TODO: replace functionality to utils (find better approach)
+  useEffect(() => {
+    const resizeHandler = (e) => {
+      if (e.currentTarget.innerWidth < 1280) {
+        setIsSideBarTemporary(true);
+      } else {
+        setIsSideBarTemporary(false);
+      }
+    };
+    window.addEventListener('resize', resizeHandler);
+    return () => {
+      window.removeEventListener('resize', resizeHandler);
+    };
+  }, []);
+
+  useLayoutEffect(() => {
+    const resizeHandler = (target) => {
+      if (target < 1280) {
+        setIsSideBarTemporary(true);
+      } else {
+        setIsSideBarTemporary(false);
+      }
+    };
+    resizeHandler(window.innerWidth);
+  }, []);
+
   return (
-    <div className={classes.root}>
+    <div className={s.sidebar}>
       <Drawer
         className={classes.drawer}
         onBackdropClick={() => setSidebarState(false)}
-        variant={isTemporary ? 'temporary' : 'permanent'}
+        variant={isSideBarTemporary ? 'temporary' : 'permanent'}
         classes={{
-          paper: cx(classes.drawerPaper, s['side-bar__paper']),
+          paper: classes.drawerPaper,
         }}
-        anchor={isVertical ? 'top' : 'left'}
+        anchor="left"
         open={sideBarState}
       >
-        <List
-          classes={{
-            padding: s['side-bar__list'],
-          }}
-        >
+        <div className={s.sidebar__head}>
+          <LogoIcon className={s.sidebar__logo} />
+          <IconButton className={classes.closeIcon} onClick={() => setSidebarState(false)}>
+            <CloseIcon />
+          </IconButton>
+        </div>
+        <List className={classes.list}>
           {sidebarItems.map((item) => (
-            <SitebarListItem name={item.name} path={item.path} key={item.name} />
+            <SitebarListItem
+              name={item.name}
+              path={item.path}
+              key={item.name}
+              clickHandler={() => setSidebarState(false)}
+            />
           ))}
         </List>
+        <Button className={classes.closeButton} onClick={() => setSidebarState(false)}>
+          Закрыть
+        </Button>
       </Drawer>
     </div>
   );

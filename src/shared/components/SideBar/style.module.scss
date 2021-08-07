@@ -1,18 +1,18 @@
 @import '../../../assets/scss/mixins';
 
-.side-bar {
-  &__paper{
+.sidebar {
+  &__head {
+    display: none;
 
-    @include maxW_720{
-      width: 100% !important;
-      height: 100vh !important;
+    @include maxW_1280 {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 10px;
     }
   }
-  
-  &__list{
-    padding-top: 0!important;
+
+  &__logo {
+    width: 100px;
+    height: 100px;
   }
-
 }
-
-

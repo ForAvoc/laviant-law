@@ -2,11 +2,15 @@
 @import '../../../assets/scss/variables';
 
 .header {
+  z-index: 3;
+  position: sticky;
+  top: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 100px;
-  padding: 0 40px 0 25px;
+  padding: 0 25px;
+  background-color: #fff;
 
   &__left {
     display: flex;
@@ -18,19 +22,19 @@
   }
 
   &__logo {
-    width: 100px;
-    height: 100px;
-
     @include maxW_1280 {
       display: none;
     }
-
     @include maxW_748 {
       display: block;
       margin: 0 auto;
     }
+    &__img{
+      width: 100px;
+      height: 100px;
+    }
   }
-
+ 
   &__adress {
     display: flex;
     align-items: center;

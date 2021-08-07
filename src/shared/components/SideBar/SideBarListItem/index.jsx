@@ -3,9 +3,9 @@ import {NavLink} from 'react-router-dom';
 
 import s from './style.module.scss';
 
-const SitebarListItem = ({name, path}) => (
-  <NavLink to={path || '/without'} className={s.listItem} activeClassName={s.listItem__selectedItem}>
-    {name || 'WITHOUT'}
+const SitebarListItem = ({name, path, clickHandler}) => (
+  <NavLink exact to={path} className={s.listItem} activeClassName={s.listItem__selectedItem} onClick={clickHandler}>
+    {name}
   </NavLink>
 );
 export default SitebarListItem;
