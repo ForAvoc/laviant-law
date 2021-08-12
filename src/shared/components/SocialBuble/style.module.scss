@@ -1,0 +1,13 @@
+.wrapper{
+    z-index: 20;
+    position: fixed;
+    bottom: 130px;
+    right: 20px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+}
+.row{
+    position: relative;
+
+}

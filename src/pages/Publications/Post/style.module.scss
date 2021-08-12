@@ -1,0 +1,73 @@
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/mixins';
+
+.post {
+  margin: 0 10px 25px 10px;
+  width: calc(33% - 25px);
+  height: 350px;
+  box-shadow: rgba(6, 39, 77, 0.2) -0.157px 8.999px 21px 0px;
+  @include maxW_900 {
+    width: calc(50% - 25px);
+  }
+  @include maxW_720 {
+    margin: 0 12.5px 25px 12.5px;
+    width: 100%;
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__image {
+    position: relative;
+    &__img {
+      width: 100%;
+      max-height: 110px;
+      object-fit: cover;
+    }
+    &__LogoIcon {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: 100px;
+      background-color: rgba(189, 187, 187, 0.2);
+      g {
+        fill: $white;
+      }
+    }
+    &__Post_time {
+      position: absolute;
+      color: $white;
+      padding: 5px 10px;
+      top: 50%;
+      left: -5px;
+      background-color: $main-purple;
+    }
+  }
+}
+
+.content {
+  margin-bottom: 20px;
+  max-height: 163px;
+  overflow: hidden;
+  &__heading {
+    padding: 15px;
+    margin: 0;
+    font-size: 18px;
+    color: $text-color;
+    font-weight: 700;
+  }
+
+  &__text {
+    margin: 0;
+    padding: 0 20px;
+    font-size: 16px;
+    color: $text-color;
+  }
+
+  &__button {
+    align-self: flex-end;
+    margin-right: 15px;
+  }
+}

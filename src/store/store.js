@@ -2,7 +2,7 @@ import {createStore, applyMiddleware, compose, combineReducers} from 'redux';
 import thunk from 'redux-thunk';
 import sideBarReducer from './sidebar-service/reducer';
 import modalReducer from './modal-service/reducer';
-import homePageSliderReducer from './HomePageSlider-service/reducer';
+import homePageSliderReducer from './slider-service/reducer';
 
 const middleWare = [thunk];
 

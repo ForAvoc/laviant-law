@@ -1,6 +1,7 @@
 import React from 'react';
 import {Button, makeStyles} from '@material-ui/core';
 import cx from 'classnames';
+import {Link} from 'react-router-dom';
 
 const useStyles = makeStyles(() => ({
   minifiedButton: {
@@ -16,12 +17,22 @@ const useStyles = makeStyles(() => ({
       color: '#8B00FF',
     },
   },
+
+  minifiedLink: {
+    color: 'white',
+    textDecoration: 'none',
+  },
 }));
 
-const CustomButton = ({onClick, Icon, text, classNameBtn, classNameIcon}) => {
+const CustomButton = ({onClick, Icon, text, linkUrl, classNameBtn, classNameIcon}) => {
   const classes = useStyles();
   return (
-    <Button onClick={onClick} className={cx(classes.minifiedButton, classNameBtn || '')}>
+    <Button
+      component={linkUrl ? Link : 'button'}
+      to={linkUrl}
+      onClick={onClick}
+      className={cx(classes.minifiedButton, classNameBtn || '')}
+    >
       {Icon && <Icon className={classNameIcon} />}
       {text}
     </Button>

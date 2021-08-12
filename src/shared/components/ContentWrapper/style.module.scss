@@ -1,0 +1,17 @@
+@import '../../../assets/scss/mixins';
+@import '../../../assets/scss/variables';
+
+
+.head{
+    &__wrapper{
+        display: flex;
+        flex-direction: column;
+        padding-top: 8px;
+    }
+    &__header{
+        font-size: 30px;
+        color: $text-color;
+        padding: 10px 0 30px 0
+    }
+
+}

@@ -1,0 +1,11 @@
+.publications {
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}

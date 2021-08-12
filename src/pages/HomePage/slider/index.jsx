@@ -12,6 +12,7 @@ import secondFoto from '../../../shared/media/mainPageSlider/second.jpg';
 import thirdFoto from '../../../shared/media/mainPageSlider/third.jpg';
 // Styles
 import styles from './style.module.scss';
+import ROUTERS from '../../../core/_consts/routes';
 
 const letsgo = [
   {
@@ -83,7 +84,7 @@ const HomePageSlider = () => {
             >
               <h2 className={styles.content__heading}>{item.name}</h2>
               <p className={styles.content__text}>{item.text}</p>
-              <CustomButton classNameBtn={styles.content__button} text="Подробнее" />
+              <CustomButton classNameBtn={styles.content__button} text="Подробнее" linkUrl={ROUTERS.PUBLICATIONS} />
             </div>
           </div>
         </div>

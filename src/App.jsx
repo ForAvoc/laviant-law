@@ -8,6 +8,11 @@ import Header from './shared/components/Header';
 import CallbackModal from './shared/components/CallbackModal';
 import RegisterBusiness from './pages/RegisterBusiness';
 import ScrollToTop from './shared/components/ScrollToTop';
+import ContactFooter from './shared/components/ContactFooter';
+import SocialBuble from './shared/components/SocialBuble';
+import Article from './pages/Publications/Article';
+import FooterCopyright from './shared/components/FooterCopyright';
+import AnchorOnTop from './shared/components/AnchorOnTop';
 
 function App() {
   const location = useLocation();
@@ -21,13 +26,23 @@ function App() {
           <ScrollToTop />
           <Switch location={location}>
             <Route exact path={ROUTERS.HOME} component={HomePage} />
+<<<<<<< HEAD
             <Route exact path={ROUTERS.PUBLICATIONS} component={RegisterBusiness} />
             <Route exact path={ROUTERS.REGISTER_BUSINESS} component={RegisterBusiness} />
+=======
+            <Route exact path={ROUTERS.PUBLICATIONS} component={Publications} />
+            <Route exact path={ROUTERS.BUY_COMPANY} component={Article} />
+
+>>>>>>> 82ff4d1 (test)
             <Redirect exact path="/" to={ROUTERS.HOME} />
           </Switch>
         </div>
       </div>
       <CallbackModal />
+      <ContactFooter />
+      <FooterCopyright />
+      <SocialBuble />
+      <AnchorOnTop />
     </div>
   );
 }
