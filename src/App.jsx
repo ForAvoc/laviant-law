@@ -26,14 +26,8 @@ function App() {
           <ScrollToTop />
           <Switch location={location}>
             <Route exact path={ROUTERS.HOME} component={HomePage} />
-<<<<<<< HEAD
             <Route exact path={ROUTERS.PUBLICATIONS} component={RegisterBusiness} />
             <Route exact path={ROUTERS.REGISTER_BUSINESS} component={RegisterBusiness} />
-=======
-            <Route exact path={ROUTERS.PUBLICATIONS} component={Publications} />
-            <Route exact path={ROUTERS.BUY_COMPANY} component={Article} />
-
->>>>>>> 82ff4d1 (test)
             <Redirect exact path="/" to={ROUTERS.HOME} />
           </Switch>
         </div>
