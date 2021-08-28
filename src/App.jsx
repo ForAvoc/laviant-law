@@ -6,7 +6,7 @@ import SideBar from './shared/components/SideBar';
 import HomePage from './pages/HomePage';
 import Header from './shared/components/Header';
 import CallbackModal from './shared/components/CallbackModal';
-import TestPage from './pages/TestPage';
+import RegisterBusiness from './pages/RegisterBusiness';
 import ScrollToTop from './shared/components/ScrollToTop';
 
 function App() {
@@ -21,8 +21,8 @@ function App() {
           <ScrollToTop />
           <Switch location={location}>
             <Route exact path={ROUTERS.HOME} component={HomePage} />
-            <Route exact path={ROUTERS.PUBLICATIONS} component={TestPage} />
-
+            <Route exact path={ROUTERS.PUBLICATIONS} component={RegisterBusiness} />
+            <Route exact path={ROUTERS.REGISTER_BUSINESS} component={RegisterBusiness} />
             <Redirect exact path="/" to={ROUTERS.HOME} />
           </Switch>
         </div>
