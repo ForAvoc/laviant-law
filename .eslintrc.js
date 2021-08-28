@@ -14,9 +14,11 @@ module.exports = {
   plugins: ['react', 'prettier'],
   rules: {
     'no-use-before-define': 'off',
+    'no-unused-vars': 'warn',
     'react/prop-types': 'off',
     'react/button-has-type': 'off',
     'import/prefer-default-export': 'off',
+    'react/react-in-jsx-scope': 'off',
     'prettier/prettier': [
       'error',
       {

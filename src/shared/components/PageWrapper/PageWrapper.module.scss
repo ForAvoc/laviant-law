@@ -1,0 +1,12 @@
+.pageWrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+
+  &__title {
+      margin: 20px 0 25px;
+      color: #4c555c;
+      font-size: 36px;
+      font-weight: 600;
+  }
+}

@@ -1,0 +1,67 @@
+.serviceHeader {
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    color: #4c555c;
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+}
+
+.preview {
+  display: flex;
+  height: 375px;
+  background-color: white;
+
+  &__document {
+    width: 315px;
+    padding: 32px;
+  }
+
+  &__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.prices {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 315px;
+  padding: 32px;
+  border: 1px solid #f7f8f9;
+  border-width: 0 1px;
+
+  &__cost {
+    color: #4c555c;
+    font-size: 17px;
+    font-weight: 700;
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 1;
+  }
+}
+
+.priceItem {
+  &__cost {
+    color: #8b00ff;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 16px;
+    font-family: Montserrat, sans-serif;
+  }
+
+  &__offerType {
+    color: #4c555c;
+    font-style: italic;
+    font-size: 13px;
+  }
+}

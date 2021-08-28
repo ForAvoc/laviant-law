@@ -28,6 +28,7 @@ const useStyles = makeStyles(() => ({
     top: 'auto',
     paddingLeft: '25px',
     borderRight: 0,
+    backgroundColor: 'transparent',
     '@media (max-width: 1280px)': {
       paddingLeft: '0px',
     },
