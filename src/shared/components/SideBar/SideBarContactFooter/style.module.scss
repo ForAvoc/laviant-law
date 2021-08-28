@@ -1,0 +1,15 @@
+@import '../../../../assets/scss/mixins';
+
+.contact__wrapper{
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    padding: 20px 0 10px 20px;
+    border-top: rgb(211, 206, 206) 2px solid;
+    @include maxW_748{
+        display: flex;
+    }
+    // @include maxW_480{
+    //     align-items: center;
+    // }
+}

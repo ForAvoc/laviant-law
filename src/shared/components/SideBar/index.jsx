@@ -10,6 +10,8 @@ import {actionSetSidebarState} from '../../../store/sidebar-service/actions';
 import s from './style.module.scss';
 // Components
 import SitebarListItem from './SideBarListItem';
+import SideBarContactFooter from './SideBarContactFooter/Index';
+
 import {ReactComponent as LogoIcon} from '../../media/Logo.svg';
 //
 import ROUTERS from '../../../core/_consts/routes';
@@ -66,6 +68,7 @@ const SideBar = ({sideBarState, setSidebarState}) => {
     {name: 'Получить лицензию', path: ROUTERS.GET_LICENSE},
     {name: 'Регистрация торговых марок', path: ROUTERS.REGISTER_TRADEMARK},
     {name: 'Миграционное право', path: ROUTERS.MIGRATION_LAW},
+    {name: 'IT право', path: ROUTERS.IT_LAW},
     {name: 'Регистрация бизнеса в инностраный юрисдикциях', path: ROUTERS.REGITER_BUSINESS_ABROAD},
     {name: 'Сопровождения бизнеса', path: ROUTERS.BUSINESS_SUPPORT},
     {name: 'Ликвидация компаний', path: ROUTERS.COMPANY_LIQUIDATION},
@@ -127,6 +130,7 @@ const SideBar = ({sideBarState, setSidebarState}) => {
             />
           ))}
         </List>
+        <SideBarContactFooter />
         <Button className={classes.closeButton} onClick={() => setSidebarState(false)}>
           Закрыть
         </Button>

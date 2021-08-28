@@ -16,9 +16,10 @@ import {actionSetSidebarState} from '../../../store/sidebar-service/actions';
 import {actionSetModalState} from '../../../store/modal-service/actions';
 // Components
 import {ReactComponent as LogoIcon} from '../../media/Logo.svg';
+
 import CustomButton from '../CustomButton';
 // Styles
-import s from './Header.module.scss';
+import s from './style.module.scss';
 import ROUTERS from '../../../core/_consts/routes';
 
 const useStyles = makeStyles(() => ({
@@ -83,28 +84,32 @@ const Header = ({setSidebarState, setModalState}) => {
           <LogoIcon className={s.header__logo__img} />
         </Link>
         <div className={s.header__adress}>
-          <LocationOnIcon />
-          <span>Г. Киев ул. Пушкина 12/2</span>
-          <Link target="_blank" href="https://goo.gl/maps/n9fPLCoy6nxFpwSQ8">
+          <span>
+            <LocationOnIcon />
+            Г. Киев Проспект Победы,
+          </span>
+          <span className={s.header__adress__secondSpan}> дом 30, офис 17 </span>
+
+          <a target="_blank" href="https://goo.gl/maps/k7tAUf4oGVZen9fB7" rel="noreferrer">
             <MapIcon />
             Открыть на карте
-          </Link>
+          </a>
         </div>
       </div>
       <div className={s.header__right}>
         <div className={s.header__contacts}>
-          <Link href="tel:+380939430469">
+          <a href="tel:+380939430469">
             <PhoneInTalkIcon />
-            <span>+380 93 943-04-69</span>
-          </Link>
-          <Link href="tel:+380939430469">
+            <span>+380 63 531-43-30</span>
+          </a>
+          <a href="tel:+380939430469">
             <PhoneInTalkIcon />
-            <span>+380-63 258-20-09</span>
-          </Link>
-          <Link href="mailto:laviant.law.firm@gmail.com">
+            <span>+380 63 258-20-09</span>
+          </a>
+          <a href="mailto:laviant.law.firm@gmail.com">
             <MailOutlineIcon />
             <span>laviant.law.firm@gmail.com</span>
-          </Link>
+          </a>
         </div>
 
         <Button className={classes.button} onClick={() => setModalState(true)}>
