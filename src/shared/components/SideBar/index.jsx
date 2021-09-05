@@ -34,7 +34,12 @@ const useStyles = makeStyles(() => ({
     borderRight: 0,
     // backgroundColor: 'transparent',
     '@media (max-width: 1280px)': {
+      top: 0,
+      height: 'calc(100vh - 50px)',
       paddingLeft: '0px',
+    },
+    '@media (max-width: 550px)': {
+      height: '100vh',
     },
     '@media (max-width: 480px)': {
       width: '100%',
