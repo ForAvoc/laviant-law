@@ -3,6 +3,8 @@
 
 .footerCoryright{
     z-index: 12000;
+    position: sticky;
+    bottom: 0;
     display: flex;
     justify-content: space-between;
     width: 100%;
