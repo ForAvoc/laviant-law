@@ -2,13 +2,14 @@ import React from 'react';
 // Componets
 
 // Material UI
-import {IconButton, makeStyles} from '@material-ui/core';
+import {IconButton, Tooltip, makeStyles} from '@material-ui/core';
 import SmsIcon from '@material-ui/icons/Sms';
 import TelegramIcon from '@material-ui/icons/Telegram';
 import YouTubeIcon from '@material-ui/icons/YouTube';
 import WhatsAppIcon from '@material-ui/icons/WhatsApp';
 import EmailIcon from '@material-ui/icons/Email';
 import FacebookIcon from '@material-ui/icons/Facebook';
+import InstagramIcon from '@material-ui/icons/Instagram';
 import CloseIcon from '@material-ui/icons/Close';
 // Styles
 import cx from 'classnames';
@@ -24,97 +25,106 @@ const useStyles = makeStyles(() => ({
     },
   },
   openIcon: {
-    fontSize: '40px',
+    fontSize: '30px',
   },
   openButtonActive: {
     color: '#8B00FF',
     backgroundColor: '#dddddd',
   },
+
   button: {
+    zIndex: '2',
     opacity: '0',
     position: 'absolute',
     bottom: '0',
-    right: '-22px',
+    right: '-18px',
     transition: 'all .5s',
-    color: 'white',
+    color: 'red',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
     visibility: 'hidden',
+    backgroundColor: 'rgba(221, 221, 221,80%)',
+    padding: '5px',
     '&:hover': {
-      backgroundColor: 'red',
+      backgroundColor: '#dddddd',
     },
   },
   icon: {
-    fontSize: '25px',
-    height: '25px',
-    width: '25px',
-
-    fill: 'white',
+    fontSize: '30px',
+    height: '30px',
+    width: '30px',
+    color: 'red',
+    fill: 'gray',
+    '&:hover': {
+      color: '#8B00FF',
+      fill: '#8B00FF',
+    },
   },
   active: {
     opacity: '1',
     visibility: 'visible',
   },
   email: {
-    bottom: '335px',
-    transition: 'all .5s .25s',
-    backgroundColor: '#1f464d',
-    '&:hover': {
-      backgroundColor: '#1f464d',
-    },
+    bottom: '315px',
+    transition: 'bottom .5s ease .25s, opacity .5s ease .25s',
   },
   whatsapp: {
-    bottom: '280px',
-    transition: 'all .5s .5s',
-    backgroundColor: '#95dc77',
-    '&:hover': {
-      backgroundColor: '#95dc77',
-    },
+    bottom: '270px',
+    transition: 'bottom .5s ease .5s, opacity .5s ease .5s',
   },
   telegram: {
     bottom: '225px',
-    transition: 'all .5s .75s',
-    backgroundColor: '#62aded',
-    '&:hover': {
-      backgroundColor: '#62aded',
-    },
-  },
-  facebook: {
-    bottom: '170px',
-    transition: 'all .5s 1s',
-    backgroundColor: '#1877f2',
-    '&:hover': {
-      backgroundColor: '#1877f2',
-    },
+    transition: 'bottom .5s ease .75s, opacity .5s ease .75s',
   },
   viber: {
-    bottom: '115px',
-    transition: 'all .5s 1.25s',
-    backgroundColor: '#7360f2',
-    '&:hover': {
-      backgroundColor: '#7360f2',
-    },
+    bottom: '180px',
+    transition: 'bottom .5s ease 1s, opacity .5s ease 1s',
+  },
+  instagram: {
+    bottom: '135px',
+    transition: 'bottom .5s ease 1.25s, opacity .5s ease 1.25s',
+  },
+  facebook: {
+    bottom: '90px',
+    transition: 'bottom .5s ease 1.5s, opacity .5s ease 1.5s',
   },
   youtube: {
-    bottom: '60px',
-    transition: 'all .5s 1.5s',
-    backgroundColor: '#ed1b24',
-    '&:hover': {
-      backgroundColor: '#ed1b24',
-    },
+    bottom: '45px',
+    transition: 'bottom .5s ease 1.75s, opacity .5s ease 1.75s',
   },
 
   close: {
     bottom: '5px',
-    transition: 'all .5s 1.75s',
+    right: '-16px',
+    transition: 'bottom .5s ease 2s, opacity .5s ease 2s',
     color: 'gray',
+    backgroundColor: 'transparent',
+    '&:hover': {
+      color: '#e65f5f',
+    },
   },
 }));
 
 const SocialBulbe = () => {
   const [active, setActive] = React.useState(false);
   const classes = useStyles();
+  const array = [
+    {title: 'E-mail', className: classes.email, href: 'mailto:laviant.law.firm@gmail.com', Icon: EmailIcon},
+    {title: 'Telegram', className: classes.telegram, href: 'tg://resolve?domain=VICIOne', Icon: TelegramIcon},
+    {
+      title: 'Whatsapp',
+      className: classes.whatsapp,
+      href: 'https://wa.me/380635314330',
+      targetBlank: true,
+      Icon: WhatsAppIcon,
+    },
+    {title: 'Viber', className: classes.viber, href: 'mailto:laviant.law.firm@gmail.com', Icon: ViberIcon},
+    {title: 'Instagram', className: classes.instagram, href: 'mailto:laviant.law.firm@gmail.com', Icon: InstagramIcon},
+    {title: 'Facebook', className: classes.facebook, href: 'mailto:laviant.law.firm@gmail.com', Icon: FacebookIcon},
+    {title: 'Youtube', className: classes.youtube, href: 'mailto:laviant.law.firm@gmail.com', Icon: YouTubeIcon},
+  ];
+
   return (
     <div className={s.wrapper}>
       <IconButton
@@ -125,41 +135,18 @@ const SocialBulbe = () => {
       </IconButton>
 
       <div className={s.row}>
-        <IconButton
-          href="mailto:laviant.law.firm@gmail.com"
-          className={cx(classes.button, {[classes.active]: active, [classes.email]: active})}
-        >
-          <EmailIcon className={classes.icon} />
-        </IconButton>
-
-        <IconButton
-          target="_blank"
-          href="https://wa.me/380635314330 "
-          className={cx(classes.button, {[classes.active]: active, [classes.whatsapp]: active})}
-        >
-          <WhatsAppIcon className={classes.icon} />
-        </IconButton>
-
-        <IconButton
-          href="tg://resolve?domain=VICIOne"
-          className={cx(classes.button, {[classes.active]: active, [classes.telegram]: active})}
-        >
-          <TelegramIcon className={classes.icon} />
-        </IconButton>
-
-        <IconButton
-          target="_blank"
-          href="https://ru-ru.facebook.com/zuck"
-          className={cx(classes.button, {[classes.active]: active, [classes.facebook]: active})}
-        >
-          <FacebookIcon className={classes.icon} />
-        </IconButton>
-        <IconButton className={cx(classes.button, {[classes.active]: active, [classes.viber]: active})}>
-          <ViberIcon className={classes.icon} />
-        </IconButton>
-        <IconButton className={cx(classes.button, {[classes.active]: active, [classes.youtube]: active})}>
-          <YouTubeIcon className={classes.icon} />
-        </IconButton>
+        {array.map(({onClick, title, href, targetBlank, className, Icon}) => (
+          <Tooltip title={title} placement="left">
+            <IconButton
+              onClick={() => onClick}
+              target={targetBlank ? '_blank' : null}
+              href={href}
+              className={cx(classes.button, {[classes.active]: active, [className]: active})}
+            >
+              <Icon className={classes.icon} />
+            </IconButton>
+          </Tooltip>
+        ))}
         <IconButton
           onClick={() => setActive(false)}
           className={cx(classes.button, {[classes.active]: active, [classes.close]: active})}
@@ -167,6 +154,7 @@ const SocialBulbe = () => {
           <CloseIcon />
         </IconButton>
       </div>
+      <div className={cx({[s.BudleBg]: active})} />
     </div>
   );
 };
