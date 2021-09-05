@@ -1,27 +1,38 @@
 import React, {useMemo} from 'react';
 // Componets
-import ContentWrapper from '../../shared/components/ContentWrapper';
+import ROUTERS from '../../core/_consts/routes';
+import PageWrapper from '../../shared/components/PageWrapper';
 import Post from './Post';
+
 // Style
 import s from './style.module.scss';
 
 const Publications = () => {
-  const posts = useMemo(() =>
-    Array(4)
-      .fill(null)
-      .map((_, index) => index)
+  const posts = useMemo(() => [
+    {title: 'Default', route: ROUTERS.ARTICLE, image: '', description: ''},
+    {title: 'Default', route: ROUTERS.ARTICLE, image: '', description: ''},
+    {title: 'Default', route: ROUTERS.ARTICLE, image: '', description: ''},
+    {title: 'Default', route: ROUTERS.ARTICLE, image: '', description: ''},
+  ]);
+
+  const breadCrubmsRoutes = useMemo(
+    () => [
+      {title: 'Главная', route: ROUTERS.HOME},
+      {title: 'Публикации', route: ROUTERS.PUBLICATIONS},
+    ],
+    []
   );
 
   return (
-    <ContentWrapper headerName="Публикации">
+    <PageWrapper breadCrumbsRoutes={breadCrubmsRoutes} pageTitle="Публикации">
       <div className={s.publications__wrapper}>
         <div className={s.publications__row}>
           {posts.map((item) => (
-            <Post key={item} />
+            <Post key={item.title} data={item} />
           ))}
         </div>
       </div>
-    </ContentWrapper>
+    </PageWrapper>
   );
 };
 

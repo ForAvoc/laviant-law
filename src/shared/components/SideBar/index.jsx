@@ -21,16 +21,18 @@ const drawerWidth = 300;
 const useStyles = makeStyles(() => ({
   drawer: {
     width: drawerWidth,
+    position: 'sticky',
     flexShrink: 0,
   },
   drawerPaper: {
     display: 'flex',
     alignItems: 'center',
     width: drawerWidth,
-    top: 'auto',
+    top: '100px',
+    height: 'calc(100vh - 150px)',
     paddingLeft: '25px',
     borderRight: 0,
-    backgroundColor: 'transparent',
+    // backgroundColor: 'transparent',
     '@media (max-width: 1280px)': {
       paddingLeft: '0px',
     },

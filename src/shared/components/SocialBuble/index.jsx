@@ -12,7 +12,7 @@ import FacebookIcon from '@material-ui/icons/Facebook';
 import CloseIcon from '@material-ui/icons/Close';
 // Styles
 import cx from 'classnames';
-import {ReactComponent as ViberIcon} from '../../media/viber.svg';
+import {ReactComponent as ViberIcon} from '../../media/Viber.svg';
 import s from './style.module.scss';
 
 const useStyles = makeStyles(() => ({

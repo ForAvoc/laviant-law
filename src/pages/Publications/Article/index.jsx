@@ -12,7 +12,8 @@ import {actionSetModalState} from '../../../store/modal-service/actions';
 import s from './style.module.scss';
 
 // Components
-import ContentWrapper from '../../../shared/components/ContentWrapper';
+import ROUTERS from '../../../core/_consts/routes';
+import PageWrapper from '../../../shared/components/PageWrapper';
 import CustomButton from '../../../shared/components/CustomButton';
 
 const useStyles = makeStyles(() => ({
@@ -54,8 +55,15 @@ const useStyles = makeStyles(() => ({
 
 const Article = ({setModalState}) => {
   const classes = useStyles();
+
+  const breadCrumbsRoutes = [
+    {title: 'Главная', route: ROUTERS.HOME},
+    {title: 'Публикации', route: ROUTERS.PUBLICATIONS},
+    {title: 'Default', route: ROUTERS.ARTICLE},
+  ];
+
   return (
-    <ContentWrapper headerName="Heading lalala reo asda weq people">
+    <PageWrapper pageTitle="Heading lalala reo asda weq people" breadCrumbsRoutes={breadCrumbsRoutes}>
       <div className={s.article}>
         <div className={s.article__wrapper}>
           <div className={s.article__imgWraper}>
@@ -104,7 +112,7 @@ const Article = ({setModalState}) => {
           </div>
         </div>
       </div>
-    </ContentWrapper>
+    </PageWrapper>
   );
 };
 
