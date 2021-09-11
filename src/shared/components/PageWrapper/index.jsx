@@ -1,3 +1,4 @@
+import {Typography} from '@material-ui/core';
 import s from './PageWrapper.module.scss';
 import BreadCrumbs from '../BreadCrumbs';
 

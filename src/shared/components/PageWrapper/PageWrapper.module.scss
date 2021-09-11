@@ -1,3 +1,5 @@
+@import '../../../assets/scss/mixins';
+
 .pageWrapper {
   display: flex;
   flex-direction: column;
@@ -8,5 +10,9 @@
       color: #4c555c;
       font-size: 36px;
       font-weight: 600;
+      word-wrap: break-word;
+      @include maxW_480{
+        font-size: 22px;
+      }
   }
 }
