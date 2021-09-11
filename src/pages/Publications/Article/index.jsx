@@ -53,38 +53,31 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-const Article = ({setModalState}) => {
+const Article = ({setModalState, children, PageTitle, foto, breadCrumbsRoutes}) => {
   const classes = useStyles();
 
-  const breadCrumbsRoutes = [
-    {title: 'Главная', route: ROUTERS.HOME},
-    {title: 'Публикации', route: ROUTERS.PUBLICATIONS},
-    {title: 'Default', route: ROUTERS.ARTICLE},
-  ];
+  // const breadCrumbsRoutes = [
+  //   {title: 'Главная', route: ROUTERS.HOME},
+  //   {title: 'Публикации', route: ROUTERS.PUBLICATIONS},
+  //   {title: 'default', route: ROUTERS.ARTICLE},
+  // ];
 
   return (
-    <PageWrapper pageTitle="Heading lalala reo asda weq people" breadCrumbsRoutes={breadCrumbsRoutes}>
+    <PageWrapper pageTitle={PageTitle} breadCrumbsRoutes={breadCrumbsRoutes}>
       <div className={s.article}>
         <div className={s.article__wrapper}>
           <div className={s.article__imgWraper}>
             <img
               className={s.article__imgWraper__img}
-              src="https://sblaw.vn/wp-content/uploads/2016/06/incorporating-a-foreign-invested-logistic-company-in-vietnam.jpg"
+              src={
+                foto ||
+                'https://sblaw.vn/wp-content/uploads/2016/06/incorporating-a-foreign-invested-logistic-company-in-vietnam.jpg'
+              }
               alt="123123"
             />
             <time className={s.article__imgWraper__time}>19.08.21</time>
           </div>
-          <div className={s.article__content}>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veritatis inventore a est! Aut dignissimos,
-              exercitationem iusto rem voluptatum, nisi expedita, ipsam culpa cum ipsum nulla nemo quisquam minus
-              aspernatur magni? Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa optio nobis corporis modi,
-              accusamus ipsum sint beatae nostrum vero nulla! Porro repellat ullam at quo ratione doloribus recusandae,
-              quod explicabo? Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias quos ut quidem eveniet,
-              debitis, suscipit aspernatur totam quis reiciendis modi temporibus esse, impedit delectus corporis? Culpa
-              ut recusandae molestias mollitia.
-            </p>
-          </div>
+          <div className={s.article__content}>{children}</div>
           <div className={s.footer}>
             <div className={s.callback}>
               <div className={s.callback__text}>

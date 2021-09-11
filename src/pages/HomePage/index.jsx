@@ -6,7 +6,7 @@ import CheckIcon from '@material-ui/icons/Check';
 import {Link} from 'react-router-dom';
 import cx from 'classnames';
 import HomePageSlider from './slider';
-import ListItem from './ListItem';
+import ListItem from '../../shared/components/ListItem';
 import OurBenefits from './OurBenefitsItem';
 import {ReactComponent as GroupIcon} from '../../shared/media/ourBenefits/group.svg';
 import {ReactComponent as BussinesIcon} from '../../shared/media/ourBenefits/hand-shake.svg';
