@@ -79,14 +79,8 @@ const HomePage = () => {
       <div className={s.homePage__title}>
         <p>Правовая помощь и Консалтинговые услуги</p>
         <p>
-          для{' '}
-          <Link to={ROUTERS.PUBLICATIONS} className={s.linkSpan}>
-            Юридических, Физических
-          </Link>{' '}
-          лиц и{' '}
-          <Link to={ROUTERS.CHANGE_EDR} className={s.linkSpan}>
-            Нерезидентов
-          </Link>
+          для <span className={s.linkSpan}>Юридических, Физических</span> лиц и{' '}
+          <span className={s.linkSpan}>Нерезидентов</span>
         </p>
       </div>
       <HomePageSlider />

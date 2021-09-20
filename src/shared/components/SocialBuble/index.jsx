@@ -1,6 +1,7 @@
 import React from 'react';
 // Componets
-
+// Redux
+import {connect} from 'react-redux';
 // Material UI
 import {IconButton, Tooltip, makeStyles} from '@material-ui/core';
 import SmsIcon from '@material-ui/icons/Sms';
@@ -13,6 +14,8 @@ import InstagramIcon from '@material-ui/icons/Instagram';
 import CloseIcon from '@material-ui/icons/Close';
 // Styles
 import cx from 'classnames';
+import {selectorGetSocialBubleState} from '../../../store/socialBuble-service/selector';
+
 import {ReactComponent as ViberIcon} from '../../media/Viber.svg';
 import s from './style.module.scss';
 
@@ -106,7 +109,7 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-const SocialBulbe = () => {
+const SocialBulbe = ({socialBubleState}) => {
   const [active, setActive] = React.useState(false);
   const classes = useStyles();
   const array = [
@@ -120,13 +123,25 @@ const SocialBulbe = () => {
       Icon: WhatsAppIcon,
     },
     {title: 'Viber', className: classes.viber, href: 'mailto:laviant.law.firm@gmail.com', Icon: ViberIcon},
-    {title: 'Instagram', className: classes.instagram, href: 'mailto:laviant.law.firm@gmail.com', Icon: InstagramIcon},
+    {
+      title: 'Instagram',
+      className: classes.instagram,
+      href: 'https://www.instagram.com/laviant.law.firm/',
+      targetBlank: true,
+      Icon: InstagramIcon,
+    },
     {title: 'Facebook', className: classes.facebook, href: 'mailto:laviant.law.firm@gmail.com', Icon: FacebookIcon},
-    {title: 'Youtube', className: classes.youtube, href: 'mailto:laviant.law.firm@gmail.com', Icon: YouTubeIcon},
+    {
+      title: 'Youtube',
+      className: classes.youtube,
+      href: 'https://www.youtube.com/channel/UCpPg2FBXE2MfKXPnBRivODA',
+      targetBlank: true,
+      Icon: YouTubeIcon,
+    },
   ];
 
   return (
-    <div className={s.wrapper}>
+    <div className={cx(s.wrapper, {[s.active]: socialBubleState})}>
       <IconButton
         className={cx(classes.openButton, {[classes.openButtonActive]: active})}
         onClick={() => setActive((prev) => !prev)}
@@ -158,4 +173,11 @@ const SocialBulbe = () => {
     </div>
   );
 };
-export default SocialBulbe;
+
+const mapStateToProps = (store) => ({
+  socialBubleState: selectorGetSocialBubleState(store),
+});
+
+const connector = connect(mapStateToProps, null);
+
+export default connector(SocialBulbe);

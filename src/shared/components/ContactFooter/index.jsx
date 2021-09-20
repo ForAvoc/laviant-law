@@ -9,8 +9,8 @@ import s from './style.module.scss';
 const ContactFooter = () => (
   <div className={s.contactFooter}>
     <PhoneInTalkIcon className={s.contactFooter__icon} />
-    <Link href="tel:+380939430469" className={s.contactFooter__link}>
-      +380 63 258-20-09
+    <Link href="tel:+380635314330" className={s.contactFooter__link}>
+      +380 63 531-43-30
     </Link>
   </div>
 );

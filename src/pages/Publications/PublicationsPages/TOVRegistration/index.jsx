@@ -14,6 +14,9 @@ const useStyles = makeStyles(() => ({
     gap: '10px',
     marginBottom: '30px',
     color: '#4c555c',
+    '@media (max-width: 768px)': {
+      fontSize: '15px',
+    },
   },
   list: {
     marginTop: '15px',

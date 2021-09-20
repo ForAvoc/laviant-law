@@ -27,8 +27,8 @@ const useStyles = makeStyles(() => ({
   },
   phoneLink: {
     fontSize: '20px',
-    fontWeight: '700',
-    letterSpacing: '2px',
+    fontWeight: '400',
+    letterSpacing: '1.2px',
   },
   mailLink: {
     fontSize: '14px',
@@ -46,15 +46,15 @@ const SideBarContactFooter = () => {
   return (
     <div className={s.contact__wrapper}>
       <Link target="_blank" href="https://goo.gl/maps/n9fPLCoy6nxFpwSQ8" className={cx(classes.item, classes.adress)}>
-        <span>Г. Киев Проспект Победы,</span>
+        <span>Киев Проспект Победы,</span>
         <span> дом 30, офис 17</span>
       </Link>
       <span className={classes.span}>Контактные номера телефонов</span>
-      <Link href="tel:+380939430469" className={cx(classes.item, classes.phoneLink)}>
-        +380 93 943-04-69
+      <Link href="tel:+380635314330" className={cx(classes.item, classes.phoneLink)}>
+        +380 63 531-43-30
       </Link>
-      <Link href="tel:+380939430469" className={cx(classes.item, classes.phoneLink)}>
-        +380 63 258-20-09
+      <Link href="tel:+380970655657" className={cx(classes.item, classes.phoneLink)}>
+        +380 97 065-56-57
       </Link>
       <span className={classes.span}>Почта для сзязи с нами</span>
       <Link href="mailto:laviant.law.firm@gmail.com" className={cx(classes.item, classes.mailLink)}>
