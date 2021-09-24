@@ -14,7 +14,7 @@ import thirdFoto from '../../../shared/media/mainPageSlider/third.jpg';
 import styles from './style.module.scss';
 import ROUTERS from '../../../core/_consts/routes';
 
-const letsgo = [
+const mainPageServices = [
   {
     name: 'Регистрация бизнеса',
     text: 'Регистрация бизнеса в инностраный юрисдикциях Регистрация бизнеса в инностраный юрисдикциях Регистрация бизнеса в инностраный юрисдикциях Регистрация бизнеса в инностраный юрисдикциях',
@@ -43,7 +43,7 @@ const HomePageSlider = () => {
 
   const setInterval = () => {
     interval.current = window.setInterval(() => {
-      setActive((prev) => (prev === letsgo.length - 1 ? 0 : prev + 1));
+      setActive((prev) => (prev === mainPageServices.length - 1 ? 0 : prev + 1));
     }, 555000);
   };
 
@@ -62,12 +62,15 @@ const HomePageSlider = () => {
 
   return (
     <div className={styles.Slider}>
-      <div className={styles.Slider__arrow} onClick={() => handleClick(active === 0 ? letsgo.length - 1 : active - 1)}>
+      <div
+        className={styles.Slider__arrow}
+        onClick={() => handleClick(active === 0 ? mainPageServices.length - 1 : active - 1)}
+      >
         <CustomButton Icon={ArrowBackIosIcon} />
       </div>
 
-      {letsgo.map((item, index) => (
-        <div className={styles.container}>
+      {mainPageServices.map((item, index) => (
+        <div className={styles.container} key={`${item.name.slice(0, 10)}_${Math.random()}`}>
           <div
             className={cx(styles.wrapper, {
               [styles.active]: index === active,
@@ -91,13 +94,14 @@ const HomePageSlider = () => {
       ))}
       <div
         className={cx(styles.Slider__arrow, styles['Slider__arrow-forward'])}
-        onClick={() => handleClick(active === letsgo.length - 1 ? 0 : active + 1)}
+        onClick={() => handleClick(active === mainPageServices.length - 1 ? 0 : active + 1)}
       >
         <CustomButton Icon={ArrowForwardIosIcon} />
       </div>
       <div className={styles.Slider__dots}>
-        {letsgo.map((_, index) => (
+        {mainPageServices.map((_, index) => (
           <div
+            key={`${_.name}_${Math.random()}`}
             className={cx(styles.Slider__dot, {
               [styles.active]: index === active,
             })}

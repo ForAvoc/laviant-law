@@ -14,10 +14,10 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-const ourBenefits = ({Icon, heading, description, iconClass, key}) => {
+const ourBenefits = ({Icon, heading, description, iconClass}) => {
   const classes = useStyles();
   return (
-    <div className={s.ourBenefits} key={key}>
+    <div className={s.ourBenefits}>
       <Icon className={cx(classes.ourBenefitsIcon, {[iconClass]: iconClass})} />
       <div className={s.ourBenefits__text}>
         <h3 className={s.ourBenefits__text__heading}>{heading}</h3>

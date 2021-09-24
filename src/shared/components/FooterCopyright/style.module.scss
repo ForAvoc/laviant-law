@@ -2,7 +2,7 @@
 @import '../../../assets/scss/mixins';
 
 .footerCoryright{
-    z-index: 12000;
+    z-index: 120;
     // position: sticky;
     bottom: 0;
     display: flex;
@@ -13,7 +13,10 @@
     border-top: 2px solid rgb(233, 81, 81);
     background-color: $main-purple;
     color: $white;
+    @include maxW_720{
+        padding: 11px 10px;
 
+    }
     @include maxW_550{
         display: none;
 

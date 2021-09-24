@@ -20,5 +20,8 @@ html{
   &__content {
     width: 100%;
     padding: 0 25px;
+    @include maxW_480 {
+      padding: 0 15px;
+    }
   }
 }

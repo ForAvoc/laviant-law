@@ -4,7 +4,7 @@ import {Typography, makeStyles} from '@material-ui/core';
 import CheckIcon from '@material-ui/icons/Check';
 // Component
 import cx from 'classnames';
-import HomePageSlider from './slider';
+import HomePageSlider from './HomePageSlider';
 import ListItem from '../../shared/components/ListItem';
 import OurBenefits from './OurBenefitsItem';
 import {ReactComponent as GroupIcon} from '../../shared/media/ourBenefits/group.svg';
@@ -141,7 +141,7 @@ const HomePage = () => {
           <span className={s.strongSpan}>Мы предоставляем качественные услуги для физических и юридических лиц:</span>
           <ul>
             {allServices.map((text) => (
-              <ListItem text={text} Icon={CheckIcon} />
+              <ListItem key={`${text.slice(0, 10)}__${Math.random()}`} text={text} Icon={CheckIcon} />
             ))}
           </ul>
         </Typography>
@@ -150,7 +150,7 @@ const HomePage = () => {
           <span className={s.strongSpan}>Для физических лиц мы предлагаем следующий перечень услуг:</span>
           <ul>
             {physicalPersonServices.map((text) => (
-              <ListItem text={text} Icon={CheckIcon} />
+              <ListItem key={`${text.slice(0, 10)}__${Math.random()}`} text={text} Icon={CheckIcon} />
             ))}
           </ul>
         </Typography>
@@ -158,7 +158,7 @@ const HomePage = () => {
         <ul className={classes.list}>
           {ourBenefits.map((item) => (
             <OurBenefits
-              key={item.heading}
+              key={`${item.heading}__${Math.random()}`}
               Icon={item.icon}
               iconClass={item.iconClass}
               heading={item.text}

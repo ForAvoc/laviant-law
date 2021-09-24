@@ -28,21 +28,8 @@ const useStyles = makeStyles(() => ({
     display: 'flex',
     alignItems: 'center',
     width: drawerWidth,
-    top: '100px',
-    height: 'calc(100vh - 150px)',
-
-    paddingLeft: '25px',
     borderRight: 0,
     backgroundColor: '#f7f8f9',
-    '@media (max-width: 1280px)': {
-      top: 0,
-      height: 'calc(100vh - 50px)',
-
-      paddingLeft: '0px',
-    },
-    '@media (max-width: 550px)': {
-      height: '100vh',
-    },
     '@media (max-width: 480px)': {
       width: '100%',
     },

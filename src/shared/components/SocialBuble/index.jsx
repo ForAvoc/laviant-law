@@ -151,7 +151,7 @@ const SocialBulbe = ({socialBubleState}) => {
 
       <div className={s.row}>
         {array.map(({onClick, title, href, targetBlank, className, Icon}) => (
-          <Tooltip title={title} placement="left">
+          <Tooltip key={title} title={title} placement="left">
             <IconButton
               onClick={() => onClick}
               target={targetBlank ? '_blank' : null}
