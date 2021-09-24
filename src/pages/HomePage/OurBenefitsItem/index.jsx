@@ -3,6 +3,7 @@ import React from 'react';
 import {makeStyles} from '@material-ui/core';
 
 // Styles
+import cx from 'classnames';
 import s from './style.module.scss';
 
 const useStyles = makeStyles(() => ({
@@ -13,18 +14,14 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
-const ourBenefits = ({Icon, heading, description}) => {
+const ourBenefits = ({Icon, heading, description, iconClass, key}) => {
   const classes = useStyles();
   return (
-    <div className={s.ourBenefits}>
-      <Icon className={classes.ourBenefitsIcon} />
+    <div className={s.ourBenefits} key={key}>
+      <Icon className={cx(classes.ourBenefitsIcon, {[iconClass]: iconClass})} />
       <div className={s.ourBenefits__text}>
         <h3 className={s.ourBenefits__text__heading}>{heading}</h3>
-        <p className={s.ourBenefits__text__description}>
-          {description}
-          Помогаем создать успешный бизнес: регистрируем ООО и предпринимателей (ФЛП), подбираем систему
-          налогообложения, предлагаем эффективные организационные формы.
-        </p>
+        <p className={s.ourBenefits__text__description}>{description}</p>
       </div>
     </div>
   );
