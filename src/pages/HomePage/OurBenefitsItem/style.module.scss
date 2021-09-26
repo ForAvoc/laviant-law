@@ -6,11 +6,12 @@
   align-items: center;
   padding: 20px 15px;
   margin-bottom: 10px;
-  max-width: 950px;
+  max-width: 1000px;
 
   @include maxW_720 {
     flex-direction: column;
     align-items: center;
+
   }
 
   @include maxW_480 {
@@ -20,15 +21,24 @@
   &__text {
     display: flex;
     flex-direction: column;
-    margin-left: 50px;
+    // margin-left: 50px;
     color: $text-color;
-
+    flex: 70%;
+    @include maxW_720 {
+      margin-top: 10px;
+    flex: none;
+      
+    }
     @include maxW_480 {
       margin-left: 0;
     }
 
     &__heading {
       margin: 0 0 15px 0;
+      @include maxW_720 {
+        margin-top: 10px;
+        
+      }
     }
 
     &__description {

@@ -21,14 +21,11 @@
         margin-top: 3px;
     }
     &__link{
-        color: $text-color;
+        color: $main-purple!important;
         font-size: 20px;
         font-weight: 750;
         margin-left: 10px;
         transition: all .3s ease;
-        &:hover{
-            color: $main-purple;
-            text-decoration: none;
-        }
+
     }
 }

@@ -3,21 +3,19 @@ import React from 'react';
 import {Typography, makeStyles} from '@material-ui/core';
 import CheckIcon from '@material-ui/icons/Check';
 // Component
-import {Link} from 'react-router-dom';
 import cx from 'classnames';
-import HomePageSlider from './slider';
+import HomePageSlider from './HomePageSlider';
 import ListItem from '../../shared/components/ListItem';
 import OurBenefits from './OurBenefitsItem';
 import {ReactComponent as GroupIcon} from '../../shared/media/ourBenefits/group.svg';
 import {ReactComponent as BussinesIcon} from '../../shared/media/ourBenefits/hand-shake.svg';
 import {ReactComponent as ResultsIcon} from '../../shared/media/ourBenefits/results.svg';
-import {ReactComponent as SocialIcon} from '../../shared/media/ourBenefits/bullhorn.svg';
+import {ReactComponent as SocialIcon} from '../../shared/media/ourBenefits/social-media.svg';
 import {ReactComponent as ClockIcon} from '../../shared/media/ourBenefits/clock.svg';
 import {ReactComponent as SaveMoneyIcon} from '../../shared/media/ourBenefits/hand.svg';
 import {ReactComponent as PaperIcon} from '../../shared/media/ourBenefits/gdpr.svg';
 import {ReactComponent as СonfidentiallyIcon} from '../../shared/media/ourBenefits/confidentiality.svg';
 import {ReactComponent as MoneyIcon} from '../../shared/media/ourBenefits/money.svg';
-import ROUTERS from '../../core/_consts/routes';
 // Styles
 import s from './style.module.scss';
 
@@ -32,6 +30,10 @@ const useStyles = makeStyles(() => ({
     display: 'flex',
     flexDirection: 'column',
     padding: '0',
+  },
+  socialIcon: {
+    // height: '120px',
+    // width: '120px',
   },
 }));
 
@@ -55,38 +57,69 @@ const physicalPersonServices = [
   'аудит недвижимости, сопровождение сделок при купле-продаже недвижимости, а также земельных участков',
 ];
 const ourBenefits = [
-  {text: 'Многолетний опыт наших сотрудников', icon: GroupIcon},
-  {text: 'Комплексные решения для бизнеса', icon: BussinesIcon},
   {
-    text: 'Гарантированное и качественное исполнение наших обязательств, работа на выполнение поставленной цели и достижение позитивного результата',
-    icon: ResultsIcon,
+    text: 'Многолетний опыт наших сотрудников',
+    icon: GroupIcon,
+    description:
+      'Компания «Лавиант» отличается узкоспециализированыи специалистами с многолетним опытом работы в своих областях деятельности. Заказываю услугу у нас, Вы можете быть уверены что работу выполнят профессионалы',
   },
-  {text: 'Оперативная поддержка в удобном для вас мессенджере', icon: SocialIcon},
-  {text: 'Быстрое выполнение поставленных задач', icon: ClockIcon},
-  {text: 'Материальная защита заказчика', icon: SaveMoneyIcon},
-  {text: 'Работа на основании понятного договора, открытости и доверия', icon: PaperIcon},
-  {text: 'Конфиденциальность при нашем сотрудничестве', icon: СonfidentiallyIcon},
+  {
+    text: 'Комплексные решения для бизнеса',
+    icon: BussinesIcon,
+    description:
+      'При сотрудничестве, мы не только выполняем нужную для Вас услугу, но и закрываем Вашу потребность, мы предлагаем индивидуальный подход и решаем Вашу проблему, доступными правовыми инструментами. ',
+  },
+  {
+    text: 'Гарантированное и качественное исполнение наших обязательств',
+    icon: ResultsIcon,
+    description: 'Мы работаем на выполнение поставленной цели и достижение позитивного результата',
+  },
+  {
+    text: 'Оперативная поддержка в удобном для вас мессенджере',
+    icon: SocialIcon,
+    description: 'Мы на связи с Вами, всегда и в любой удобной для Вас форме. Всё просто',
+  },
+  {
+    text: 'Быстрое выполнение поставленных задач',
+    icon: ClockIcon,
+    description:
+      'Заказывая услугу, Вы получаете не только качественное исполнение, но и оперативность, которую Вы ожидаете, быстрота для нас важна не меньше, чем качество, как и для Вас',
+  },
+  {
+    text: 'Материальная защита заказчика',
+    icon: SaveMoneyIcon,
+    description:
+      'Мы работаем на договорных основаниях, оплата наших услуг осуществляется по факту выполненной работы, сотрудничая с нами, Вы ничем не рискуете',
+  },
+  {
+    text: 'Работа на основании понятного договора, открытости и доверия',
+    icon: PaperIcon,
+    description:
+      'В наших интересах построить понятные партнерские отношения ради общего развития Вашего бизнеса. Договора, которые мы заключаем с клиентами предельно простые и понятные, мы не пытаемся усложнить Вашу предпринимательскую жизнь, а наоборот – упростить её, в этом наша философия, и договор, который Вы с нами подписываете начало нашего плодородного сотрудничества, и олицетворение нашей философии, как компании, которая упростит Вашу жизнь.',
+  },
+  {
+    text: 'Конфиденциальность при нашем сотрудничестве',
+    icon: СonfidentiallyIcon,
+    description:
+      'Для нас важно, чтобы Вы чувствовали себя защищенными, одни из аспектов защиты является конфиденциальность, которую мы обеспечиваем при сотрудничестве',
+  },
   {
     text: 'Адекватная ценовая политика, которая соответствует соотношению цены/качества в предлагаемых нами услугах',
     icon: MoneyIcon,
+    description:
+      'Вы получаете ровно то, за что Вы платите, ценовая политика компании «Лавиант» отражает ту обоснованную цену, которую Вы отдаете за услугу. Всё просто.',
   },
 ];
-
 const HomePage = () => {
   const classes = useStyles();
+
   return (
     <div className={s.homePage}>
       <div className={s.homePage__title}>
         <p>Правовая помощь и Консалтинговые услуги</p>
         <p>
-          для{' '}
-          <Link to={ROUTERS.PUBLICATIONS} className={s.linkSpan}>
-            Юридических, Физических
-          </Link>{' '}
-          лиц и{' '}
-          <Link to={ROUTERS.CHANGE_EDR} className={s.linkSpan}>
-            Нерезидентов
-          </Link>
+          для <span className={s.linkSpan}>Юридических, Физических</span> лиц и{' '}
+          <span className={s.linkSpan}>Нерезидентов</span>
         </p>
       </div>
       <HomePageSlider />
@@ -108,7 +141,7 @@ const HomePage = () => {
           <span className={s.strongSpan}>Мы предоставляем качественные услуги для физических и юридических лиц:</span>
           <ul>
             {allServices.map((text) => (
-              <ListItem text={text} Icon={CheckIcon} />
+              <ListItem key={`${text.slice(0, 10)}__${Math.random()}`} text={text} Icon={CheckIcon} />
             ))}
           </ul>
         </Typography>
@@ -117,14 +150,20 @@ const HomePage = () => {
           <span className={s.strongSpan}>Для физических лиц мы предлагаем следующий перечень услуг:</span>
           <ul>
             {physicalPersonServices.map((text) => (
-              <ListItem text={text} Icon={CheckIcon} />
+              <ListItem key={`${text.slice(0, 10)}__${Math.random()}`} text={text} Icon={CheckIcon} />
             ))}
           </ul>
         </Typography>
         <span className={cx(s.strongSpan, s.ourBenefitsWrapper__heading)}>В чем наши преимущества?</span>
         <ul className={classes.list}>
           {ourBenefits.map((item) => (
-            <OurBenefits Icon={item.icon} heading={item.text} description="" />
+            <OurBenefits
+              key={`${item.heading}__${Math.random()}`}
+              Icon={item.icon}
+              iconClass={item.iconClass}
+              heading={item.text}
+              description={item.description}
+            />
           ))}
         </ul>
       </div>

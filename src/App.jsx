@@ -22,6 +22,7 @@ import SecurityLicense from './pages/Publications/PublicationsPages/SecurityLice
 import BusinessRegistration from './pages/Publications/PublicationsPages/BusinessRegistration';
 import CountriesForITBusiness from './pages/Publications/PublicationsPages/CountriesForITBusiness';
 import JurisdictionsForBusiness from './pages/Publications/PublicationsPages/JurisdictionsForBusiness';
+import TaxationOOO from './pages/Publications/PublicationsPages/TaxationOOO';
 
 function App() {
   const location = useLocation();
@@ -46,6 +47,7 @@ function App() {
             <Route exact path={ROUTERS.BUSINESS_REGISTRATION} component={BusinessRegistration} />
             <Route exact path={ROUTERS.COUNTRES_FOR_IT_BUSINESS} component={CountriesForITBusiness} />
             <Route exact path={ROUTERS.JURISDICTIONS_FOR_BUSINESS} component={JurisdictionsForBusiness} />
+            <Route exact path={ROUTERS.TAXATION_OOO} component={TaxationOOO} />
 
             <Redirect exact path="/" to={ROUTERS.HOME} />
           </Switch>

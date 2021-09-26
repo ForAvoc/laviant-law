@@ -6,7 +6,6 @@ import {Link} from 'react-router-dom';
 import {Button, makeStyles, IconButton} from '@material-ui/core';
 import PhoneEnabledIcon from '@material-ui/icons/PhoneEnabled';
 import MenuIcon from '@material-ui/icons/Menu';
-import LocationOnIcon from '@material-ui/icons/LocationOn';
 import MapIcon from '@material-ui/icons/Map';
 import PhoneInTalkIcon from '@material-ui/icons/PhoneInTalk';
 import MailOutlineIcon from '@material-ui/icons/MailOutline';
@@ -84,10 +83,7 @@ const Header = ({setSidebarState, setModalState}) => {
           <LogoIcon className={s.header__logo__img} />
         </Link>
         <div className={s.header__adress}>
-          <span>
-            <LocationOnIcon />
-            Г. Киев Проспект Победы,
-          </span>
+          <span>Киев Проспект Победы,</span>
           <span className={s.header__adress__secondSpan}> дом 30, офис 17 </span>
 
           <a target="_blank" href="https://goo.gl/maps/k7tAUf4oGVZen9fB7" rel="noreferrer">
@@ -98,13 +94,13 @@ const Header = ({setSidebarState, setModalState}) => {
       </div>
       <div className={s.header__right}>
         <div className={s.header__contacts}>
-          <a href="tel:+380939430469">
+          <a href="tel:+380635314330">
             <PhoneInTalkIcon />
             <span>+380 63 531-43-30</span>
           </a>
-          <a href="tel:+380939430469">
+          <a href="tel:+380970655657">
             <PhoneInTalkIcon />
-            <span>+380 63 258-20-09</span>
+            <span>+380 97 065-56-57</span>
           </a>
           <a href="mailto:laviant.law.firm@gmail.com">
             <MailOutlineIcon />

@@ -31,7 +31,7 @@ const ServiceHeader = ({prices, setModalState}) => {
           <p className={s.prices__cost}>Стоимость услуг:</p>
           <div className={s.prices__items}>
             {prices.map((item) => (
-              <div className={s.priceItem}>
+              <div className={s.priceItem} key={`${item.offerType}_${Math.random()}`}>
                 <p className={s.priceItem__cost}>{item.cost}</p>
                 <p className={s.priceItem__offerType}>{item.offerType}</p>
               </div>

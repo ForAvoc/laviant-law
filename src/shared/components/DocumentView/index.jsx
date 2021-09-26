@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {Document, Page, pdfjs} from 'react-pdf';
-import {Modal, makeStyles, withStyles, IconButton, ThemeProvider, createMuiTheme} from '@material-ui/core';
+import {Modal, makeStyles, withStyles, IconButton, ThemeProvider, createTheme} from '@material-ui/core';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import cx from 'classnames';
@@ -52,7 +52,7 @@ const useStyles = makeStyles({
   },
 });
 
-const theme = createMuiTheme({
+const theme = createTheme({
   palette: {
     primary: {
       main: '#fafafa',

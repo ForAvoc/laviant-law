@@ -1,11 +1,26 @@
+@import '../../../assets/scss/mixins';
+
 .wrapper{
     z-index: 20;
     position: fixed;
-    bottom: 120px;
+    bottom: 65px;
     right: 23px;
     display: flex;
     flex-direction: column-reverse;
     align-items: center;
+    transition: all .5s .1s;
+    @include maxW_550{
+        bottom: 75px;
+
+    }
+}
+.active{
+    bottom: 120px;
+
+    @include maxW_550{
+        bottom: 103px;
+
+    }
 }
 .row{
     position: relative;

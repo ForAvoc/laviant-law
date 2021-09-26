@@ -23,6 +23,7 @@ const ROUTERS = {
   JURISDICTIONS_FOR_BUSINESS: '/publications/jurisdictions-for-business',
   TAX_E_RESIDENCY5: '/publications/tax_e_residency',
   TAX_E_RESIDENCY6: '/publications/tax_e_residency',
+  TAXATION_OOO: '/publications/taxation-OOO',
 };
 
 export default ROUTERS;

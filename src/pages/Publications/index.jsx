@@ -11,6 +11,7 @@ import foto5 from '../../shared/media/Publications/JurisdictionsForBusiness.jpg'
 import foto6 from '../../shared/media/Publications/SecurityLicense.jpg';
 import foto7 from '../../shared/media/Publications/TaxEResidency.jpeg';
 import foto8 from '../../shared/media/Publications/TOVRegistration.jpg';
+import foto9 from '../../shared/media/Publications/TaxationOOO.jpg';
 
 // Style
 import s from './style.module.scss';
@@ -72,6 +73,13 @@ const Publications = () => {
       image: foto5,
       description:
         'Создание бизнеса в иностранных юрисдикциях это долгий и кропотливый процесс, и каждый с его этапов важен, так как будет влиять на вашу деятельность. Ваше дело может принести как доход, так и убытки, в случае неправильно выбранных методов при выборе юрисдикции, в которой вы планируете запускать свой бизнес.',
+    },
+    {
+      title: 'Налогообложения ООО',
+      route: ROUTERS.TAXATION_OOO,
+      image: foto9,
+      description:
+        'Вы уже решили, каким бизнесом заняться и готовы к началу работы, но перед этим вам стоит еще одна фундаментальная задача – определиться с системой налогообложения, по которой вы будете работать.',
     },
   ]);
 
