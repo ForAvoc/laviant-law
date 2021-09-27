@@ -9,12 +9,12 @@ const useStyles = makeStyles(() => ({
     borderRadius: '0px',
     fontSize: '12px',
     fontWeight: 700,
-    backgroundColor: '#8B00FF',
-    border: '1px solid #8B00FF',
+    backgroundColor: '#8766e4',
+    border: '1px solid #8766e4',
     color: 'white',
     '&:hover': {
       backgroundColor: 'white',
-      color: '#8B00FF',
+      color: '#8766e4',
     },
   },
 

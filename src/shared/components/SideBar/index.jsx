@@ -41,7 +41,7 @@ const useStyles = makeStyles(() => ({
     display: 'none',
     borderRadius: '5px',
     fontWeight: 600,
-    color: '#8B00FF',
+    color: '#8766e4',
     marginBottom: '20px',
     '@media (max-width: 480px)': {
       display: 'block',

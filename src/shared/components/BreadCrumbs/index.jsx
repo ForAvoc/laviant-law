@@ -18,7 +18,7 @@ const useStyles = makeStyles(() => ({
     cursor: 'pointer',
     '&:hover': {
       textDecoration: 'underline',
-      color: '#8B00FF',
+      color: '#8766e4',
     },
   },
   activeLink: {

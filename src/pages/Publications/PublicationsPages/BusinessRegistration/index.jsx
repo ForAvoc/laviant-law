@@ -41,10 +41,10 @@ const useStyles = makeStyles(() => ({
       left: '0',
       height: '1px',
       width: '100%',
-      backgroundColor: '#8B00FF',
+      backgroundColor: '#8766e4',
     },
     '&:hover': {
-      color: '#8B00FF',
+      color: '#8766e4',
       '&::after': {
         backgroundColor: '#4c555c',
       },

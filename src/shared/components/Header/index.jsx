@@ -28,8 +28,8 @@ const useStyles = makeStyles(() => ({
     borderRadius: '0px',
     fontSize: '12px',
     fontWeight: 700,
-    backgroundColor: '#8B00FF',
-    border: '1px solid #8B00FF',
+    backgroundColor: '#8766e4',
+    border: '1px solid #8766e4',
     color: 'white',
     '&:hover': {
       backgroundColor: 'white',
@@ -46,7 +46,7 @@ const useStyles = makeStyles(() => ({
     display: 'none',
     '&:hover': {
       backgroundColor: 'white',
-      color: '#8B00FF',
+      color: '#8766e4',
     },
     '@media (max-width: 900px)': {
       display: 'flex',
@@ -83,7 +83,7 @@ const Header = ({setSidebarState, setModalState}) => {
           <LogoIcon className={s.header__logo__img} />
         </Link>
         <div className={s.header__adress}>
-          <span>Киев Проспект Победы,</span>
+          <span>Киев Проспект Победы,&nbsp;</span>
           <span className={s.header__adress__secondSpan}> дом 30, офис 17 </span>
 
           <a target="_blank" href="https://goo.gl/maps/k7tAUf4oGVZen9fB7" rel="noreferrer">
