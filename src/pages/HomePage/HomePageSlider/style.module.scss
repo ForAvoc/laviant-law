@@ -15,13 +15,12 @@
     bottom: -45px;
     left: 0;
     z-index: 2;
-
     &-forward {
       left: 64px;
-    }
-
-    @include maxW_480 {
-      display: none;
+      @include maxW_480 {
+        left: auto;
+        right: 0;
+      }
     }
   }
 

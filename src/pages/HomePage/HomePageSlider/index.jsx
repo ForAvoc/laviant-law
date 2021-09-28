@@ -7,33 +7,35 @@ import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 // Components
 import CustomButton from '../../../shared/components/CustomButton';
 // Media
-import firstFoto from '../../../shared/media/mainPageSlider/first.jpg';
+import firstFoto from '../../../shared/media/mainPageSlider/ITFoto.jpg';
 import secondFoto from '../../../shared/media/mainPageSlider/second.jpg';
 import thirdFoto from '../../../shared/media/mainPageSlider/third.jpg';
+import fourthFoto from '../../../shared/media/mainPageSlider/fourth.jpg';
+
 // Styles
 import styles from './style.module.scss';
 import ROUTERS from '../../../core/_consts/routes';
 
 const mainPageServices = [
   {
-    name: 'Регистрация бизнеса',
+    name: 'Купить ООО с НДС',
     text: 'Регистрация бизнеса в инностраный юрисдикциях Регистрация бизнеса в инностраный юрисдикциях Регистрация бизнеса в инностраный юрисдикциях Регистрация бизнеса в инностраный юрисдикциях',
-    foto: firstFoto,
+    foto: thirdFoto,
   },
   {
-    name: 'Регистрация бизнеса в инностраный юрисдикциях',
+    name: 'Купить ООО с лицензией на поставку электроэнергии',
     text: 'Регистрация бизнеса в инностраный юрисдикциях Регистрация бизнеса в инностраный юрисдикциях Регистрация бизнеса в инностраный юрисдикциях',
     foto: secondFoto,
   },
   {
-    name: 'Регистрация торговых марок',
+    name: 'Зарегистрировать ФЛП для IT',
     text: 'Регистрация бизнеса в инностраный юрисдикциях юрисдикциях Регистрация бизнеса в инностраный юрисдикциях',
-    foto: thirdFoto,
+    foto: firstFoto,
   },
   {
-    name: 'Регистрация торговых марок',
+    name: 'Получить вид на жительство в Украине',
     text: 'Регистрация бизнеса в инностраный юрисдикциях юрисдикциях Регистрация бизнеса в инностраный юрисдикциях',
-    foto: thirdFoto,
+    foto: fourthFoto,
   },
 ];
 
@@ -44,7 +46,7 @@ const HomePageSlider = () => {
   const setInterval = () => {
     interval.current = window.setInterval(() => {
       setActive((prev) => (prev === mainPageServices.length - 1 ? 0 : prev + 1));
-    }, 555000);
+    }, 5000);
   };
 
   useEffect(() => {
@@ -68,7 +70,12 @@ const HomePageSlider = () => {
       >
         <CustomButton Icon={ArrowBackIosIcon} />
       </div>
-
+      <div
+        className={cx(styles.Slider__arrow, styles['Slider__arrow-forward'])}
+        onClick={() => handleClick(active === mainPageServices.length - 1 ? 0 : active + 1)}
+      >
+        <CustomButton Icon={ArrowForwardIosIcon} />
+      </div>
       {mainPageServices.map((item, index) => (
         <div className={styles.container} key={`${item.name.slice(0, 10)}_${Math.random()}`}>
           <div
@@ -92,12 +99,6 @@ const HomePageSlider = () => {
           </div>
         </div>
       ))}
-      <div
-        className={cx(styles.Slider__arrow, styles['Slider__arrow-forward'])}
-        onClick={() => handleClick(active === mainPageServices.length - 1 ? 0 : active + 1)}
-      >
-        <CustomButton Icon={ArrowForwardIosIcon} />
-      </div>
       <div className={styles.Slider__dots}>
         {mainPageServices.map((_, index) => (
           <div

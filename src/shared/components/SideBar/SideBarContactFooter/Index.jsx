@@ -45,7 +45,7 @@ const SideBarContactFooter = () => {
 
   return (
     <div className={s.contact__wrapper}>
-      <Link target="_blank" href="https://goo.gl/maps/n9fPLCoy6nxFpwSQ8" className={cx(classes.item, classes.adress)}>
+      <Link target="_blank" href="https://goo.gl/maps/k7tAUf4oGVZen9fB7" className={cx(classes.item, classes.adress)}>
         <span>Киев Проспект Победы,</span>
         <span> дом 30, офис 17</span>
       </Link>
