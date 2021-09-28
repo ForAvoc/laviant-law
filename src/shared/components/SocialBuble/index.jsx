@@ -130,7 +130,13 @@ const SocialBulbe = ({socialBubleState}) => {
       targetBlank: true,
       Icon: InstagramIcon,
     },
-    {title: 'Facebook', className: classes.facebook, href: 'mailto:laviant.law.firm@gmail.com', Icon: FacebookIcon},
+    {
+      title: 'Facebook',
+      className: classes.facebook,
+      href: 'https://www.facebook.com/%D0%AE%D1%80%D0%B8%D0%B4%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B0%D1%8F-%D0%BA%D0%BE%D0%BC%D0%BF%D0%B0%D0%BD%D0%B8%D1%8F-%D0%9B%D0%B0%D0%B2%D0%B8%D0%B0%D0%BD%D1%82-267750898436830/?hc_ref=ARSQzFhZdS2X8YsuA1r079JzW069bX-5nw-J6S9l2WjOXJTpVX7Sk2k8pVb6Fz2rDe8&ref=nf_target&__tn__=kC-R',
+      targetBlank: true,
+      Icon: FacebookIcon,
+    },
     {
       title: 'Youtube',
       className: classes.youtube,
