@@ -65,7 +65,7 @@ const SideBar = ({sideBarState, setSidebarState}) => {
     {name: 'Регистрация торговых марок', path: ROUTERS.REGISTER_TRADEMARK},
     {name: 'Миграционное право', path: ROUTERS.MIGRATION_LAW},
     {name: 'IT право', path: ROUTERS.IT_LAW},
-    {name: 'Регистрация бизнеса в инностраный юрисдикциях', path: ROUTERS.REGITER_BUSINESS_ABROAD},
+    {name: 'Регистрация бизнеса в инностраных юрисдикциях', path: ROUTERS.REGITER_BUSINESS_ABROAD},
     {name: 'Сопровождения бизнеса', path: ROUTERS.BUSINESS_SUPPORT},
     {name: 'Ликвидация компаний', path: ROUTERS.COMPANY_LIQUIDATION},
   ]);

@@ -1,0 +1,29 @@
+@import './variables';
+@import './mixins';
+
+.offer {
+  &__title {
+    color: #4c555c;
+    font-size: 26px;
+    font-weight: 600;
+    margin: 20px 0 25px 0;
+  }
+
+  &__paragraph {
+    padding: 10px;
+  }
+
+  &__list {
+    padding: 10px 40px 10px;
+    li {
+      margin: 10px 0;
+    }
+  }
+
+  &__remark {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 20px 0;
+  }
+}

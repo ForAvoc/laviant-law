@@ -5,6 +5,10 @@
   flex-direction: column;
   padding: 20px;
 
+  @include maxW_480{
+    padding: 20px 0;
+  }
+
   &__title {
       margin: 20px 0 25px;
       color: #4c555c;

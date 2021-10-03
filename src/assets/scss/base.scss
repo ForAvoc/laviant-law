@@ -1,3 +1,5 @@
+@import './offer.scss';
+
 html {
   box-sizing: border-box;
   -webkit-text-size-adjust: 100%;
@@ -16,6 +18,23 @@ body {
     'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  .bg-white {
+    background-color: white;
+  }
+
+  .bold-text {
+    font-weight: 600;
+  }
+
+  .italic-text {
+    color: red;
+    font-style: italic;
+  }
+
+  .mt25 {
+    margin-top: 25px;
+  }
 }
 
 code {

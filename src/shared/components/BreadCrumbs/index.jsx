@@ -1,15 +1,19 @@
 import {Breadcrumbs, Typography, withStyles, makeStyles} from '@material-ui/core';
 import {useHistory} from 'react-router';
+import cx from 'classnames';
 
-const StyledBreadcrumbs = withStyles({
-  root: {
-    fontSize: '12px',
-  },
-})(Breadcrumbs);
+// const StyledBreadcrumbs = withStyles({
+//   root: {
+//     fontSize: '12px',
+//   },
+// })(Breadcrumbs);
 
 const useStyles = makeStyles(() => ({
-  current: {
-    fontSize: '14px',
+  root: {
+    '& .MuiBreadcrumbs-ol': {
+      display: 'flex',
+      gap: '5px',
+    },
   },
   link: {
     color: '#cacaca',
@@ -38,11 +42,11 @@ const BreadCrumbs = ({routes}) => {
   const history = useHistory();
 
   return (
-    <StyledBreadcrumbs aria-label="breadcrumb">
+    <Breadcrumbs className={classes.root}>
       {!!routes.length &&
         routes.map((item, i) =>
           isRouteLast(routes.length - 1, i) ? (
-            <Typography key={item.title} className={classes.current}>
+            <Typography key={item.title} className={cx(classes.current, classes.activeLink)}>
               {item.title}
             </Typography>
           ) : (
@@ -57,7 +61,7 @@ const BreadCrumbs = ({routes}) => {
           )
         )}
       )
-    </StyledBreadcrumbs>
+    </Breadcrumbs>
   );
 };
 
