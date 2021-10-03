@@ -62,7 +62,7 @@ const theme = createTheme({
 
 const StyledCircularProgress = withStyles({
   colorPrimary: {
-    color: '#8B00FF',
+    color: '#8766e4',
   },
 })(CircularProgress);
 

@@ -15,7 +15,7 @@ const useStyles = makeStyles(() => ({
     marginBottom: '5px',
 
     '&:hover': {
-      color: '#8B00FF',
+      color: '#8766e4',
       textDecoration: 'none',
     },
   },

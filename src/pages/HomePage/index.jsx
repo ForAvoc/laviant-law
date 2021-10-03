@@ -145,7 +145,6 @@ const HomePage = () => {
             ))}
           </ul>
         </Typography>
-
         <Typography className={classes.paragraph} variant="subtitle1">
           <span className={s.strongSpan}>Для физических лиц мы предлагаем следующий перечень услуг:</span>
           <ul>

@@ -45,7 +45,7 @@ const useStyles = makeStyles(() => ({
     display: 'none',
     borderRadius: '5px',
     fontWeight: 600,
-    color: '#8B00FF',
+    color: '#8766e4',
     marginBottom: '20px',
     '@media (max-width: 480px)': {
       display: 'block',
@@ -69,7 +69,7 @@ const SideBar = ({sideBarState, setSidebarState}) => {
     {name: 'Регистрация торговых марок', path: ROUTERS.REGISTER_TRADEMARK},
     {name: 'Миграционное право', path: ROUTERS.MIGRATION_LAW},
     {name: 'IT право', path: ROUTERS.IT_LAW},
-    {name: 'Регистрация бизнеса в инностраный юрисдикциях', path: ROUTERS.REGITER_BUSINESS_ABROAD},
+    {name: 'Регистрация бизнеса в инностраных юрисдикциях', path: ROUTERS.REGITER_BUSINESS_ABROAD},
     {name: 'Сопровождения бизнеса', path: ROUTERS.BUSINESS_SUPPORT},
     {name: 'Ликвидация компаний', path: ROUTERS.COMPANY_LIQUIDATION},
   ]);

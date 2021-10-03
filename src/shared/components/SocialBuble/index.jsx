@@ -24,14 +24,14 @@ const useStyles = makeStyles(() => ({
     backgroundColor: '#1f464d',
     color: 'white',
     '&:hover': {
-      color: '#8B00FF',
+      color: '#8766e4',
     },
   },
   openIcon: {
     fontSize: '30px',
   },
   openButtonActive: {
-    color: '#8B00FF',
+    color: '#8766e4',
     backgroundColor: '#dddddd',
   },
 
@@ -60,8 +60,8 @@ const useStyles = makeStyles(() => ({
     color: 'red',
     fill: 'gray',
     '&:hover': {
-      color: '#8B00FF',
-      fill: '#8B00FF',
+      color: '#8766e4',
+      fill: '#8766e4',
     },
   },
   active: {

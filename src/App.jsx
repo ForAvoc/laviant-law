@@ -6,7 +6,7 @@ import SideBar from './shared/components/SideBar';
 import HomePage from './pages/HomePage';
 import Header from './shared/components/Header';
 import CallbackModal from './shared/components/CallbackModal';
-import RegisterBusiness from './pages/RegisterBusiness';
+import RegisterBusiness from './pages/Offers/RegisterBusiness';
 import ScrollToTop from './shared/components/ScrollToTop';
 import ContactFooter from './shared/components/ContactFooter';
 import SocialBuble from './shared/components/SocialBuble';
@@ -23,6 +23,15 @@ import BusinessRegistration from './pages/Publications/PublicationsPages/Busines
 import CountriesForITBusiness from './pages/Publications/PublicationsPages/CountriesForITBusiness';
 import JurisdictionsForBusiness from './pages/Publications/PublicationsPages/JurisdictionsForBusiness';
 import TaxationOOO from './pages/Publications/PublicationsPages/TaxationOOO';
+import BuyCompany from './pages/Offers/BuyCompany';
+import GetLicense from './pages/Offers/GetLicense';
+import RegisterTradeMark from './pages/Offers/RegisterTradeMark';
+import MigrationLaw from './pages/Offers/MigrationLaw';
+import RegisterBusinessAbroad from './pages/Offers/RegisterBusinessAbroad';
+import BusinessSupport from './pages/Offers/BusinessSupport';
+import CompanyLiquidation from './pages/Offers/CompanyLiquidation';
+import ChangeEdr from './pages/Offers/ChangeEdr';
+import ITLaw from './pages/Offers/ITLaw';
 
 function App() {
   const location = useLocation();
@@ -48,7 +57,15 @@ function App() {
             <Route exact path={ROUTERS.COUNTRES_FOR_IT_BUSINESS} component={CountriesForITBusiness} />
             <Route exact path={ROUTERS.JURISDICTIONS_FOR_BUSINESS} component={JurisdictionsForBusiness} />
             <Route exact path={ROUTERS.TAXATION_OOO} component={TaxationOOO} />
-
+            <Route exact path={ROUTERS.BUY_COMPANY} component={BuyCompany} />
+            <Route exact path={ROUTERS.GET_LICENSE} component={GetLicense} />
+            <Route exact path={ROUTERS.REGISTER_TRADEMARK} component={RegisterTradeMark} />
+            <Route exact path={ROUTERS.MIGRATION_LAW} component={MigrationLaw} />
+            <Route exact path={ROUTERS.REGITER_BUSINESS_ABROAD} component={RegisterBusinessAbroad} />
+            <Route exact path={ROUTERS.BUSINESS_SUPPORT} component={BusinessSupport} />
+            <Route exact path={ROUTERS.COMPANY_LIQUIDATION} component={CompanyLiquidation} />
+            <Route exact path={ROUTERS.CHANGE_EDR} component={ChangeEdr} />
+            <Route exact path={ROUTERS.IT_LAW} component={ITLaw} />
             <Redirect exact path="/" to={ROUTERS.HOME} />
           </Switch>
         </div>
