@@ -16,7 +16,7 @@ const Post = ({data}) => (
             src={data.image || 'https://links-stream.ru/assets/media/packs/business.jpg'}
           />
           <LogoIcon className={s.post__image__LogoIcon} />
-          <time className={s.post__image__Post_time}>20.04.21</time>
+          <time className={s.post__image__Post_time}>{data.time}</time>
         </div>
         <div className={s.content}>
           <h3 className={s.content__heading}>{data.title}</h3>
