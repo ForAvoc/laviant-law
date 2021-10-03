@@ -72,7 +72,7 @@ function App() {
       </div>
       <CallbackModal />
       <ContactFooter />
-      <FooterCopyright />
+      {/* <FooterCopyright /> */}
       <SocialBuble />
       <AnchorOnTop />
     </div>

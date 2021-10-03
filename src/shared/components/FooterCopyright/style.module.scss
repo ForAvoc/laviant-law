@@ -2,12 +2,12 @@
 @import '../../../assets/scss/mixins';
 
 .footerCoryright {
-  z-index: 120;
-  bottom: 0;
+  z-index: 1200;
+  // bottom: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  width: auto;
   padding: 10px 30px 10px 50px;
   border-top: 2px solid gray;
   background-color: $main-purple;

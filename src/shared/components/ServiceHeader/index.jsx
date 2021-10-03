@@ -9,7 +9,6 @@ import DocumenView from '../DocumentView';
 import DocumentImage from '../../media/mainPageSlider/first.jpg';
 import CustomButton from '../CustomButton';
 import {actionSetModalState} from '../../../store/modal-service/actions';
-import Pdf from '../../media/documents/example.pdf';
 
 const ServiceHeader = ({prices, setModalState}) => {
   const [isViewOpened, setIsViewOpened] = useState(false);

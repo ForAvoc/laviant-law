@@ -21,21 +21,23 @@ const drawerWidth = 300;
 const useStyles = makeStyles(() => ({
   drawer: {
     width: drawerWidth,
-    position: 'sticky',
     flexShrink: 0,
-  },
-  drawerPaper: {
-    top: '100px',
-    display: 'flex',
-    alignItems: 'center',
-    width: drawerWidth,
-    borderRight: 0,
-    backgroundColor: '#f7f8f9',
-    '@media (max-width: 1280px)': {
-      top: '0px',
-    },
-    '@media (max-width: 480px)': {
-      width: '100%',
+    '& .MuiDrawer-paper': {
+      boxSizing: 'border-box',
+      top: '100px',
+      width: drawerWidth,
+      borderRight: 0,
+      bottom: 0,
+      backgroundColor: '#f7f8f9',
+      height: 'calc(100vh - 100px)',
+      paddingLeft: '0px',
+      '@media (max-width: 1280px)': {
+        height: '100vh',
+        top: 0,
+      },
+      '@media (max-width: 480px)': {
+        width: '100%',
+      },
     },
   },
   list: {
@@ -69,14 +71,30 @@ const SideBar = ({sideBarState, setSidebarState}) => {
     {name: 'Регистрация торговых марок', path: ROUTERS.REGISTER_TRADEMARK},
     {name: 'Миграционное право', path: ROUTERS.MIGRATION_LAW},
     {name: 'IT право', path: ROUTERS.IT_LAW},
-    {name: 'Регистрация бизнеса в инностраных юрисдикциях', path: ROUTERS.REGITER_BUSINESS_ABROAD},
+    {name: 'Регистрация бизнеса в инностраный юрисдикциях', path: ROUTERS.REGITER_BUSINESS_ABROAD},
     {name: 'Сопровождения бизнеса', path: ROUTERS.BUSINESS_SUPPORT},
     {name: 'Ликвидация компаний', path: ROUTERS.COMPANY_LIQUIDATION},
   ]);
+
   const [isSideBarTemporary, setIsSideBarTemporary] = useState(false);
   const classes = useStyles();
 
-  // TODO: replace functionality to utils (find better approach)
+  // const [scrollPosition, setScrollPosition] = useState(0);
+  // const [isChanged, setIsChanged] = useState(false);
+  // const [maxScrollHeight, setMaxScrollHeight] = useState(0);
+
+  // useEffect(() => {
+  //   setMaxScrollHeight(document.body.scrollHeight - window.innerHeight);
+
+  //   const onResize = () => {
+  //     const newState = window.scrollY + 75 > maxScrollHeight;
+  //     setIsChanged(newState);
+  //     setScrollPosition(window.scrollY);
+  //   };
+
+  //   window.addEventListener('scroll', onResize);
+  // }, []);
+
   useEffect(() => {
     const resizeHandler = (e) => {
       if (e.currentTarget.innerWidth < 1280) {
@@ -108,9 +126,6 @@ const SideBar = ({sideBarState, setSidebarState}) => {
         className={classes.drawer}
         onBackdropClick={() => setSidebarState(false)}
         variant={isSideBarTemporary ? 'temporary' : 'permanent'}
-        classes={{
-          paper: classes.drawerPaper,
-        }}
         anchor="left"
         open={sideBarState}
       >
@@ -121,6 +136,8 @@ const SideBar = ({sideBarState, setSidebarState}) => {
           </IconButton>
         </div>
         <List className={classes.list}>
+          {/* <pre>{JSON.stringify(scrollPosition, null, 2)}</pre>
+          <pre>{JSON.stringify(isChanged, null, 2)}</pre> */}
           {sidebarItems.map((item) => (
             <SitebarListItem
               name={item.name}

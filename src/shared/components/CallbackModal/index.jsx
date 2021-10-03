@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {useRef, useState, useEffect} from 'react';
 import {makeStyles} from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
+import emailjs from 'emailjs-com';
 import Fade from '@material-ui/core/Fade';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
@@ -39,6 +40,16 @@ const useStyles = makeStyles(() => ({
   formItem: {
     marginTop: '10px',
   },
+  infoSuccess: {
+    marginTop: '25px',
+    alignSelf: 'center',
+    color: 'green',
+  },
+  errorInfo: {
+    marginTop: '25px',
+    alignSelf: 'center',
+    color: 'red',
+  },
 }));
 
 const ValidationSchema = yup.object().shape({
@@ -52,12 +63,35 @@ const ValidationSchema = yup.object().shape({
 
 const CallbackModal = ({modalState, setModalState}) => {
   const classes = useStyles();
+  const [isSended, setIsSended] = useState(false);
+  const [isError, setIsError] = useState(false);
   // ?????
   // const [isModalStyle, setIsModalStyle] = React.useState(false);
+
+  const form = useRef();
+
+  useEffect(() => {
+    if (!modalState) {
+      setTimeout(() => {
+        setIsError(false);
+        setIsSended(false);
+      }, 600);
+    }
+  }, [modalState]);
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm('service_794b227', 'template_d9z77jl', form.current, 'user_IdywS1gEqj6tfeZh6PdHI')
+      .then(() => setIsSended(true))
+      .catch(() => setIsError(true));
+  };
 
   const handleClose = () => {
     setModalState(false);
   };
+
   return (
     <Modal
       className={classes.modal}
@@ -83,14 +117,9 @@ const CallbackModal = ({modalState, setModalState}) => {
             initialValues={{nameSurname: '', email: '', phoneNumber: ''}}
             validateOnBlur
             validationSchema={ValidationSchema}
-            onSubmit={(values, {setSubmitting}) => {
-              setTimeout(() => {
-                setSubmitting(false);
-              }, 400);
-            }}
           >
             {({values, errors, touched, handleChange, handleBlur, handleSubmit, isSubmitting}) => (
-              <Form onSubmit={handleSubmit} className={s.popup__callbackForm}>
+              <Form onSubmit={sendEmail} ref={form} className={s.popup__callbackForm}>
                 <TextField
                   className={cx(classes.root, classes.formItem)}
                   name="nameSurname"
@@ -125,16 +154,20 @@ const CallbackModal = ({modalState, setModalState}) => {
                   error={errors.phoneNumber && touched.phoneNumber && errors.phoneNumber}
                   helperText={errors.phoneNumber && touched.phoneNumber && errors.phoneNumber}
                 />
-                <Button
-                  className={classes.formButton}
-                  color="primary"
-                  fullWidth
-                  variant="contained"
-                  type="submit"
-                  disabled={isSubmitting}
-                >
-                  Отправить
-                </Button>
+                {!isSended && !isError && (
+                  <Button
+                    className={classes.formButton}
+                    color="primary"
+                    fullWidth
+                    variant="contained"
+                    type="submit"
+                    disabled={isSubmitting}
+                  >
+                    Отправить
+                  </Button>
+                )}
+                {isSended && <p className={classes.infoSuccess}>Ваше сообщение было успешно отправлено!</p>}
+                {isError && <p className={classes.errorInfo}>Произошла ошибка :(</p>}
               </Form>
             )}
           </Formik>

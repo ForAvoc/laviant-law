@@ -4,7 +4,7 @@ import {Typography, makeStyles} from '@material-ui/core';
 import CheckIcon from '@material-ui/icons/Check';
 // Component
 import cx from 'classnames';
-import HomePageSlider from './HomePageSlider';
+import HomePageSlider from '../../shared/components/HomePageSlider';
 import ListItem from '../../shared/components/ListItem';
 import OurBenefits from './OurBenefitsItem';
 import {ReactComponent as GroupIcon} from '../../shared/media/ourBenefits/group.svg';

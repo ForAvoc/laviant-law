@@ -5,14 +5,14 @@ import cx from 'classnames';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 // Components
-import CustomButton from '../../../shared/components/CustomButton';
+import CustomButton from '../CustomButton';
 // Media
-import firstFoto from '../../../shared/media/mainPageSlider/ITFoto.jpg';
-import secondFoto from '../../../shared/media/mainPageSlider/second.jpg';
-import thirdFoto from '../../../shared/media/mainPageSlider/third.jpg';
-import fourthFoto from '../../../shared/media/mainPageSlider/fourth.jpg';
+import firstFoto from '../../media/mainPageSlider/ITFoto.jpg';
+import secondFoto from '../../media/mainPageSlider/second.jpg';
+import thirdFoto from '../../media/mainPageSlider/third.jpg';
+import fourthFoto from '../../media/mainPageSlider/fourth.jpg';
 
-// Styles
+// Style
 import styles from './style.module.scss';
 import ROUTERS from '../../../core/_consts/routes';
 
