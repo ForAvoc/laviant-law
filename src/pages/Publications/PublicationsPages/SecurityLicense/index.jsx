@@ -5,9 +5,6 @@ import ROUTERS from '../../../../core/_consts/routes';
 // Components
 import Article from '../../Article';
 
-// Material UI
-// Media
-
 const useStyles = makeStyles(() => ({
   paragraph: {
     gap: '10px',

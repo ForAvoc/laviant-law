@@ -11,9 +11,7 @@ import s from './style.module.scss';
 // Components
 import SitebarListItem from './SideBarListItem';
 import SideBarContactFooter from './SideBarContactFooter/Index';
-
 import {ReactComponent as LogoIcon} from '../../media/Logo.svg';
-//
 import ROUTERS from '../../../core/_consts/routes';
 
 const drawerWidth = 300;

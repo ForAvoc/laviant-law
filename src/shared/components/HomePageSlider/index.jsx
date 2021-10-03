@@ -11,7 +11,6 @@ import firstFoto from '../../media/mainPageSlider/ITFoto.jpg';
 import secondFoto from '../../media/mainPageSlider/second.jpg';
 import thirdFoto from '../../media/mainPageSlider/third.jpg';
 import fourthFoto from '../../media/mainPageSlider/fourth.jpg';
-
 // Style
 import styles from './style.module.scss';
 import ROUTERS from '../../../core/_consts/routes';
@@ -77,7 +76,7 @@ const HomePageSlider = () => {
         <CustomButton Icon={ArrowForwardIosIcon} />
       </div>
       {mainPageServices.map((item, index) => (
-        <div className={styles.container} key={`${item.name.slice(0, 10)}_${Math.random()}`}>
+        <div className={styles.container} key={item.name}>
           <div
             className={cx(styles.wrapper, {
               [styles.active]: index === active,

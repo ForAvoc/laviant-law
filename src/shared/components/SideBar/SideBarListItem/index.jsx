@@ -1,6 +1,5 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
-
 import s from './style.module.scss';
 
 const SitebarListItem = ({name, path, clickHandler}) => (

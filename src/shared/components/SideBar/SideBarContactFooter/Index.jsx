@@ -1,6 +1,4 @@
 import React from 'react';
-// Componets
-
 // Material UI
 import {makeStyles, Link} from '@material-ui/core';
 // Styles

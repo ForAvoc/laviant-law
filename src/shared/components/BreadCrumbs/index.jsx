@@ -1,12 +1,6 @@
-import {Breadcrumbs, Typography, withStyles, makeStyles} from '@material-ui/core';
+import {Breadcrumbs, Typography, makeStyles} from '@material-ui/core';
 import {useHistory} from 'react-router';
 import cx from 'classnames';
-
-// const StyledBreadcrumbs = withStyles({
-//   root: {
-//     fontSize: '12px',
-//   },
-// })(Breadcrumbs);
 
 const useStyles = makeStyles(() => ({
   root: {

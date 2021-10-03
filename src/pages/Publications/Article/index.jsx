@@ -1,20 +1,14 @@
 import React from 'react';
 // Material UI
-import {Button, makeStyles, Typography, Link} from '@material-ui/core';
+import {Button, makeStyles, Link} from '@material-ui/core';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import TwitterIcon from '@material-ui/icons/Twitter';
-import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import cx from 'classnames';
-// Redux
-import {connect} from 'react-redux';
-import {actionSetModalState} from '../../../store/modal-service/actions';
 // Styles
 import s from './style.module.scss';
-
 // Components
-import ROUTERS from '../../../core/_consts/routes';
 import PageWrapper from '../../../shared/components/PageWrapper';
-import CustomButton from '../../../shared/components/CustomButton';
+import Banner from '../../../shared/components/Banner';
 
 const useStyles = makeStyles(() => ({
   socialItem: {
@@ -32,28 +26,12 @@ const useStyles = makeStyles(() => ({
   facebook: {
     color: '#1773ea',
   },
-  linkedIn: {
-    color: '#0270ad',
-  },
   button: {
     padding: '15px 20px',
   },
-  firstText: {
-    fontSize: '25px',
-    '@media (max-width: 550px)': {
-      fontSize: '18px',
-    },
-  },
-  secondText: {
-    fontSize: '17px',
-    marginTop: '15px',
-    '@media (max-width: 550px)': {
-      fontSize: '14px',
-    },
-  },
 }));
 
-const Article = ({setModalState, children, PageTitle, foto, breadCrumbsRoutes}) => {
+const Article = ({children, PageTitle, foto, breadCrumbsRoutes}) => {
   const classes = useStyles();
   return (
     <PageWrapper pageTitle={PageTitle} breadCrumbsRoutes={breadCrumbsRoutes}>
@@ -72,23 +50,7 @@ const Article = ({setModalState, children, PageTitle, foto, breadCrumbsRoutes}) 
           </div>
           <div className={s.article__content}>{children}</div>
           <div className={s.footer}>
-            <div className={s.callback}>
-              <div className={s.callback__text}>
-                <Typography className={classes.firstText}>
-                  У Вас есть вопросы или Вы готовы договориться о встрече?
-                </Typography>
-                <Typography className={classes.secondText}>
-                  Вы можете заказать обратный звонок или связаться с нами любым удобным Вам способом
-                </Typography>
-              </div>
-              <div className={s.callback__btn}>
-                <CustomButton
-                  onClick={() => setModalState(true)}
-                  classNameBtn={classes.button}
-                  text="Заказать звонок"
-                />
-              </div>
-            </div>
+            <Banner />
           </div>
           <p>Если статья была Вам полезна, Вы можете поделиться ею:</p>
           <div className={s.footer__social}>
@@ -117,9 +79,4 @@ const Article = ({setModalState, children, PageTitle, foto, breadCrumbsRoutes}) 
   );
 };
 
-const mapDispatchToProps = {
-  setModalState: actionSetModalState,
-};
-
-const connector = connect(null, mapDispatchToProps);
-export default connector(Article);
+export default Article;

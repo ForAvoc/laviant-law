@@ -1,31 +1,29 @@
 @import '../../../assets/scss/mixins';
 @import '../../../assets/scss/variables';
 
-.contactFooter{
-    z-index: 2;
-    position: sticky;
-    justify-content: center;
-    bottom: 0;
-    left: 0;
-    display: none;
-    width: 100%;
-    padding: 20px 0;
-    border-top: 2px solid rgb(236, 236, 236);
-    background-color: rgb(255, 255, 255);
-    @include maxW_550{
-        display: flex;
-
-    }
-    &__icon{
-        color:$main-purple;
-        margin-top: 3px;
-    }
-    &__link{
-        color: $main-purple!important;
-        font-size: 20px;
-        font-weight: 750;
-        margin-left: 10px;
-        transition: all .3s ease;
-
-    }
+.contactFooter {
+  z-index: 2;
+  position: sticky;
+  justify-content: center;
+  bottom: 0;
+  left: 0;
+  display: none;
+  width: 100%;
+  padding: 20px 0;
+  border-top: 2px solid rgb(236, 236, 236);
+  background-color: rgb(255, 255, 255);
+  @include maxW_550 {
+    display: flex;
+  }
+  &__icon {
+    color: $main-purple;
+    margin-top: 3px;
+  }
+  &__link {
+    color: $main-purple !important;
+    font-size: 20px;
+    font-weight: 750;
+    margin-left: 10px;
+    transition: all 0.3s ease;
+  }
 }

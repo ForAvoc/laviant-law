@@ -53,7 +53,7 @@ const useStyles = makeStyles(() => ({
 }));
 
 const ValidationSchema = yup.object().shape({
-  // nameSurname: yup.string().required('Пожалуйста укажите свое имя!'),
+  nameSurname: yup.string().required('Пожалуйста укажите свое имя!'),
   phoneNumber: yup
     .number()
     .typeError('Номер введен некоректно')
@@ -65,8 +65,6 @@ const CallbackModal = ({modalState, setModalState}) => {
   const classes = useStyles();
   const [isSended, setIsSended] = useState(false);
   const [isError, setIsError] = useState(false);
-  // ?????
-  // const [isModalStyle, setIsModalStyle] = React.useState(false);
 
   const form = useRef();
 
@@ -118,7 +116,7 @@ const CallbackModal = ({modalState, setModalState}) => {
             validateOnBlur
             validationSchema={ValidationSchema}
           >
-            {({values, errors, touched, handleChange, handleBlur, handleSubmit, isSubmitting}) => (
+            {({values, errors, touched, handleChange, handleBlur, isSubmitting}) => (
               <Form onSubmit={sendEmail} ref={form} className={s.popup__callbackForm}>
                 <TextField
                   className={cx(classes.root, classes.formItem)}

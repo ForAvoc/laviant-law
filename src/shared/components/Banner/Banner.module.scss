@@ -1,0 +1,29 @@
+@import '../../../assets/scss/mixins';
+
+.callback {
+  background-color: #f1f8f9;
+  margin: 30px 0 30px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  @include maxW_748 {
+    flex-direction: column;
+  }
+  @include maxW_550 {
+    padding: 15px;
+  }
+  &__text {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin-right: 50px;
+    @include maxW_864 {
+      max-width: 400px;
+    }
+    @include maxW_748 {
+      margin-bottom: 20px;
+      margin-right: 0;
+    }
+  }
+}

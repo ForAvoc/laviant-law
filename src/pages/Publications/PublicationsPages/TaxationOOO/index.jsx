@@ -3,12 +3,9 @@ import {Typography, makeStyles} from '@material-ui/core';
 import foto from '../../../../shared/media/Publications/TaxationOOO.jpg';
 import table1 from '../../../../shared/media/Publications/TaxationOOO-table1.jpg';
 import table2 from '../../../../shared/media/Publications/TaxationOOO-table2.jpg';
-
-// Material UI
 import ROUTERS from '../../../../core/_consts/routes';
-// Components
 import Article from '../../Article';
-// «    »
+
 const useStyles = makeStyles(() => ({
   paragraph: {
     gap: '10px',

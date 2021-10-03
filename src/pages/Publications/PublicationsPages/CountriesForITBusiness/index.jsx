@@ -1,13 +1,9 @@
 import React from 'react';
 import {Typography, makeStyles} from '@material-ui/core';
 import foto from '../../../../shared/media/Publications/CountriesForITBusiness.jpg';
-
 import ROUTERS from '../../../../core/_consts/routes';
 // Components
 import Article from '../../Article';
-
-// Material UI
-// Media
 
 const useStyles = makeStyles(() => ({
   paragraph: {

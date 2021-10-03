@@ -31,10 +31,6 @@ const useStyles = makeStyles(() => ({
     flexDirection: 'column',
     padding: '0',
   },
-  socialIcon: {
-    // height: '120px',
-    // width: '120px',
-  },
 }));
 
 const allServices = [

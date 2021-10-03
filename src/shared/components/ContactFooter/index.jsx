@@ -1,5 +1,4 @@
 import React from 'react';
-
 // Material UI
 import PhoneInTalkIcon from '@material-ui/icons/PhoneInTalk';
 import {Link} from '@material-ui/core';

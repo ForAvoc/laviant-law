@@ -12,12 +12,12 @@ import {actionSetModalState} from '../../../store/modal-service/actions';
 
 const ServiceHeader = ({prices, setModalState}) => {
   const [isViewOpened, setIsViewOpened] = useState(false);
-  const [numPages, setNumPages] = useState(null);
-  const [pageNumber, setPageNumber] = useState(1);
+  // const [numPages, setNumPages] = useState(null);
+  // const [pageNumber, setPageNumber] = useState(1);
 
-  const onDocumentLoadSuccess = ({numPages}) => {
-    setNumPages(numPages);
-  };
+  // const onDocumentLoadSuccess = ({numPages}) => {
+  //   setNumPages(numPages);
+  // };
 
   return (
     <div className={s.serviceHeader}>

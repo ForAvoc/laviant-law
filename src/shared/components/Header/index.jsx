@@ -15,7 +15,6 @@ import {actionSetSidebarState} from '../../../store/sidebar-service/actions';
 import {actionSetModalState} from '../../../store/modal-service/actions';
 // Components
 import {ReactComponent as LogoIcon} from '../../media/Logo.svg';
-
 import CustomButton from '../CustomButton';
 // Styles
 import s from './style.module.scss';

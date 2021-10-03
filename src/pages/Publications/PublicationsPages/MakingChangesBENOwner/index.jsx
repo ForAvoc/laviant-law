@@ -3,9 +3,6 @@ import {Typography, makeStyles} from '@material-ui/core';
 import ROUTERS from '../../../../core/_consts/routes';
 // Components
 import Article from '../../Article';
-
-// Material UI
-// Media
 import foto from '../../../../shared/media/Publications/MakingChangesBENOwner.jpg';
 
 const useStyles = makeStyles(() => ({

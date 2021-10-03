@@ -1,5 +1,4 @@
 import React from 'react';
-// Componets
 // Redux
 import {connect} from 'react-redux';
 // Material UI
@@ -15,7 +14,6 @@ import CloseIcon from '@material-ui/icons/Close';
 // Styles
 import cx from 'classnames';
 import {selectorGetSocialBubleState} from '../../../store/socialBuble-service/selector';
-
 import {ReactComponent as ViberIcon} from '../../media/Viber.svg';
 import s from './style.module.scss';
 
