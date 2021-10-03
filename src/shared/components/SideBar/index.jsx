@@ -25,11 +25,15 @@ const useStyles = makeStyles(() => ({
     flexShrink: 0,
   },
   drawerPaper: {
+    top: '100px',
     display: 'flex',
     alignItems: 'center',
     width: drawerWidth,
     borderRight: 0,
     backgroundColor: '#f7f8f9',
+    '@media (max-width: 1280px)': {
+      top: '0px',
+    },
     '@media (max-width: 480px)': {
       width: '100%',
     },

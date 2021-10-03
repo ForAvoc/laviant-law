@@ -83,7 +83,7 @@ const Header = ({setSidebarState, setModalState}) => {
           <LogoIcon className={s.header__logo__img} />
         </Link>
         <div className={s.header__adress}>
-          <span>Киев Проспект Победы,</span>
+          <span>Киев Проспект Победы,&nbsp;</span>
           <span className={s.header__adress__secondSpan}> дом 30, офис 17 </span>
 
           <a target="_blank" href="https://goo.gl/maps/k7tAUf4oGVZen9fB7" rel="noreferrer">

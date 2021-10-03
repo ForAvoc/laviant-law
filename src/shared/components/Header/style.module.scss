@@ -43,7 +43,9 @@
     color: $gray;
     font-weight: 300;
     margin-left: 20px;
-
+    &:first-child {
+      padding-right: 10px;
+    }
     @include maxW_864 {
       font-size: 17px;
 
