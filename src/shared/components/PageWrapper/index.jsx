@@ -2,7 +2,6 @@
 /* eslint-disable no-unused-vars */
 import s from './PageWrapper.module.scss';
 import BreadCrumbs from '../BreadCrumbs';
-import Banner from '../Banner';
 // import ServiceHeader from '../ServiceHeader';
 
 const PageWrapper = ({children, pageTitle, breadCrumbsRoutes, serviceHeaderPrices}) => (
@@ -11,7 +10,6 @@ const PageWrapper = ({children, pageTitle, breadCrumbsRoutes, serviceHeaderPrice
     <p className={s.pageWrapper__title}>{pageTitle.toUpperCase()}</p>
     {/* <ServiceHeader prices={serviceHeaderPrices} /> */}
     <div className={s.pageWrapper__content}>{children}</div>
-    <Banner />
   </div>
 );
 

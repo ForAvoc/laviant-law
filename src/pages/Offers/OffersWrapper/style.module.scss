@@ -1,0 +1,42 @@
+@import '../../../assets/scss/variables';
+@import '../../../assets/scss/mixins';
+
+.offersWrapper {
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  &__imgWraper {
+    position: relative;
+    &__img {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+    }
+    &__time {
+      color: $white;
+      font-size: 18px;
+      position: absolute;
+      top: 10px;
+      left: -10px;
+      background-color: $main-purple;
+      padding: 10px 20px;
+    }
+  }
+
+  &__content {
+    flex: 1 1 auto;
+    margin-top: 35px;
+  }
+}
+.footer {
+  font-size: 18px;
+  font-weight: 600;
+  color: $text-color;
+  margin-bottom: 10px;
+  &__social {
+    padding: 10px;
+  }
+}

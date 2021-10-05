@@ -54,7 +54,6 @@ const Article = ({children, PageTitle, foto, breadCrumbsRoutes}) => {
           </div>
           <p>Если статья была Вам полезна, Вы можете поделиться ею:</p>
           <div className={s.footer__social}>
-            {/* <FacebookIcon className={cx(classes.socialItem, classes.facebook)} /> */}
             <Button
               component={Link}
               target="_blank"
