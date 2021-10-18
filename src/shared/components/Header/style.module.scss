@@ -34,7 +34,20 @@
       height: 100px;
     }
   }
- 
+ &__siteName{
+   display: flex;
+   flex-direction: column;
+   font-size: 22px;
+    color: $gray;
+    font-weight: 600;
+    p{
+      margin-left: 20px;
+
+    }
+    @include maxW_748 {
+      display: none;
+    }
+ }
   &__adress {
     display: flex;
     align-items: center;

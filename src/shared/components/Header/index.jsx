@@ -81,7 +81,19 @@ const Header = ({setSidebarState, setModalState}) => {
         <Link to={ROUTERS.HOME} className={s.header__logo}>
           <LogoIcon className={s.header__logo__img} />
         </Link>
-        <div className={s.header__adress}>
+        <div className={s.header__siteName}>
+          <p>Юридическая компания лавиант</p>
+          <div className={s.header__adress}>
+            <span>Киев Проспект Победы,&nbsp;</span>
+            <span className={s.header__adress__secondSpan}> дом 30, офис 17 </span>
+
+            <a target="_blank" href="https://goo.gl/maps/k7tAUf4oGVZen9fB7" rel="noreferrer">
+              <MapIcon />
+              Открыть на карте
+            </a>
+          </div>
+        </div>
+        {/* <div className={s.header__adress}>
           <span>Киев Проспект Победы,&nbsp;</span>
           <span className={s.header__adress__secondSpan}> дом 30, офис 17 </span>
 
@@ -89,7 +101,7 @@ const Header = ({setSidebarState, setModalState}) => {
             <MapIcon />
             Открыть на карте
           </a>
-        </div>
+        </div> */}
       </div>
       <div className={s.header__right}>
         <div className={s.header__contacts}>

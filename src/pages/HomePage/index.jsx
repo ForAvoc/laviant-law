@@ -18,6 +18,7 @@ import {ReactComponent as СonfidentiallyIcon} from '../../shared/media/ourBenef
 import {ReactComponent as MoneyIcon} from '../../shared/media/ourBenefits/money.svg';
 // Styles
 import s from './style.module.scss';
+import Banner from '../../shared/components/Banner';
 
 const useStyles = makeStyles(() => ({
   paragraph: {
@@ -161,6 +162,7 @@ const HomePage = () => {
             />
           ))}
         </ul>
+        <Banner />
       </div>
     </div>
   );
