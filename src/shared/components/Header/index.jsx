@@ -82,7 +82,7 @@ const Header = ({setSidebarState, setModalState}) => {
           <LogoIcon className={s.header__logo__img} />
         </Link>
         <div className={s.header__siteName}>
-          <p>Юридическая компания лавиант</p>
+          <p>Юридическая компания Лавиант</p>
           <div className={s.header__adress}>
             <span>Киев Проспект Победы,&nbsp;</span>
             <span className={s.header__adress__secondSpan}> дом 30, офис 17 </span>

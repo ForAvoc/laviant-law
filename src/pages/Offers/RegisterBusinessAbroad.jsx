@@ -3,6 +3,7 @@ import {Typography, makeStyles} from '@material-ui/core';
 import PageWrapper from '../../shared/components/PageWrapper';
 import ROUTERS from '../../core/_consts/routes';
 import OffersWrapper from './OffersWrapper';
+import foto from '../../shared/media/Offers/RegisterBusinessAbroad.jpg';
 
 const useStyles = makeStyles(() => ({
   paragraph: {
@@ -57,15 +58,9 @@ const RegisterBusinessAbroad = () => {
   const classes = useStyles();
 
   return (
-    //   <Typography className={classes.paragraph} variant="subtitle1">
-    //   <ul className={classes.list}>
-    //     <li className={classes.listitem}>111</li>
-    // </ul>
-    // </Typography>
-
     <div className="offer">
       <PageWrapper breadCrumbsRoutes={breadCrubmsRoutes} pageTitle="Регистрация бизнеса в инностранных юрисдикциях">
-        <OffersWrapper>
+        <OffersWrapper foto={foto}>
           <div className="offer__description">
             <Typography className={classes.paragraph} variant="subtitle1">
               Процесс создания бизнеса в любой иностранной юрисдикции невозможен без сопровождения юристов. Это

@@ -3,6 +3,7 @@ import {Typography, makeStyles} from '@material-ui/core';
 import PageWrapper from '../../shared/components/PageWrapper';
 import ROUTERS from '../../core/_consts/routes';
 import OffersWrapper from './OffersWrapper';
+import foto from '../../shared/media/Offers/GetLicense.jpg';
 
 const useStyles = makeStyles(() => ({
   paragraph: {
@@ -59,7 +60,7 @@ const GetLicense = () => {
   return (
     <div className="offer">
       <PageWrapper breadCrumbsRoutes={breadCrubmsRoutes} pageTitle="Получить лицензию">
-        <OffersWrapper>
+        <OffersWrapper foto={foto}>
           <div className="offer__description">
             <Typography className={classes.paragraph} variant="subtitle1">
               Законодательством Украины предусмотрено обязательное лицензирование отдельных видов деятельности субъектов

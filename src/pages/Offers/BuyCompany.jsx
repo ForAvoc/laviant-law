@@ -3,6 +3,7 @@ import {Typography, makeStyles} from '@material-ui/core';
 import PageWrapper from '../../shared/components/PageWrapper';
 import ROUTERS from '../../core/_consts/routes';
 import OffersWrapper from './OffersWrapper';
+import foto from '../../shared/media/Offers/BuyCompany.jpg';
 
 const useStyles = makeStyles(() => ({
   paragraph: {
@@ -60,7 +61,7 @@ const BuyCompany = () => {
   return (
     <div className="offer">
       <PageWrapper breadCrumbsRoutes={breadCrubmsRoutes} pageTitle="Купить компанию">
-        <OffersWrapper>
+        <OffersWrapper foto={foto}>
           <div className="offer__description">
             <Typography className={classes.paragraph} variant="subtitle1">
               Часто компания нужна как можно быстрее и нет времени ждать, пока будет проведена регистрация, получен

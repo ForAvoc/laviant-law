@@ -2,6 +2,7 @@ import {useMemo} from 'react';
 import PageWrapper from '../../shared/components/PageWrapper';
 import ROUTERS from '../../core/_consts/routes';
 import OffersWrapper from './OffersWrapper';
+import foto from '../../shared/media/Offers/CompanyLiquidation.jpg';
 
 const CompanyLiquidation = () => {
   const breadCrubmsRoutes = useMemo(
@@ -19,19 +20,15 @@ const CompanyLiquidation = () => {
   return (
     <div className="offer">
       <PageWrapper breadCrumbsRoutes={breadCrubmsRoutes} pageTitle="Ликвидация бизнеса">
-        <OffersWrapper prices={prices}>
+        <OffersWrapper prices={prices} foto={foto}>
           <div className="offer__description">
             <p className="offer__title">Что мы делаем?</p>
-            <p className="offer__paragraph bg-white">
+            <p className="offer__paragraph ">
               Помимо услуг по регистрации компаний в Украине и за рубежом, также мы предлагаем ликвидацию предприятий.
             </p>
-            <p className="offer__paragraph bg-white">
-              Если бизнес Вам больше не нужен, мы поможем Вам его ликвидировать.
-            </p>
-            <p className="offer__paragraph bg-white">
-              В данном случае мы предлагаем два варианта нашего сотрудничества:
-            </p>
-            <ul className="bg-white mt25">
+            <p className="offer__paragraph ">Если бизнес Вам больше не нужен, мы поможем Вам его ликвидировать.</p>
+            <p className="offer__paragraph ">В данном случае мы предлагаем два варианта нашего сотрудничества:</p>
+            <ul className=" mt25">
               <li className="offer__paragraph">
                 Официальная ликвидация через налоговую, с подготовкой полного пакета документов, необходимых для
                 закрытия компании.
@@ -40,7 +37,7 @@ const CompanyLiquidation = () => {
                 Альтернативная ликвидация путем продажи корпоративных прав на номинального владельца.
               </li>
             </ul>
-            <p className="offer__paragraph bg-white mt25">Мы предлагаем услугу ликвидации как для ФЛП так и ООО.</p>
+            <p className="offer__paragraph  mt25">Мы предлагаем услугу ликвидации как для ФЛП так и ООО.</p>
           </div>
         </OffersWrapper>
       </PageWrapper>
