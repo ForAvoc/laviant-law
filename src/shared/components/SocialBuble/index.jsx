@@ -112,7 +112,7 @@ const SocialBulbe = ({socialBubleState}) => {
   const classes = useStyles();
   const array = [
     {title: 'E-mail', className: classes.email, href: 'mailto:laviant.law.firm@gmail.com', Icon: EmailIcon},
-    {title: 'Telegram', className: classes.telegram, href: 'tg://resolve?domain=VICIOne', Icon: TelegramIcon},
+    {title: 'Telegram', className: classes.telegram, href: 'tg://resolve?domain=laviant_lawfirm', Icon: TelegramIcon},
     {
       title: 'Whatsapp',
       className: classes.whatsapp,
@@ -120,7 +120,7 @@ const SocialBulbe = ({socialBubleState}) => {
       targetBlank: true,
       Icon: WhatsAppIcon,
     },
-    {title: 'Viber', className: classes.viber, href: 'mailto:laviant.law.firm@gmail.com', Icon: ViberIcon},
+    {title: 'Viber', className: classes.viber, href: 'viber://add?number=380635314330', Icon: ViberIcon},
     {
       title: 'Instagram',
       className: classes.instagram,
