@@ -6,7 +6,7 @@ import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import cx from 'classnames';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import CloseIcon from '@material-ui/icons/Close';
-import PDF from '../../media/documents/example.pdf';
+// import PDF from '../../media/documents/example.pdf';
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
@@ -95,7 +95,7 @@ export default function DocumentView({isViewOpened, setIsViewOpened}) {
           </IconButton>
           <Document
             className={classes.document}
-            file={PDF}
+            file={null}
             onLoadSuccess={onDocumentLoadSuccess}
             loading={
               <>

@@ -16,6 +16,7 @@
 .preview {
   display: flex;
   height: auto;
+  min-height: 300px;
   background-color: white;
 
   @include maxW_550 {
