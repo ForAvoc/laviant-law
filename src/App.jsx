@@ -1,5 +1,4 @@
 import {Switch, Route} from 'react-router-dom';
-import {CircularProgress} from '@material-ui/core';
 import {lazy, Suspense} from 'react';
 import ROUTERS from './core/_consts/routes';
 import s from './App.module.scss';
@@ -10,6 +9,7 @@ import ScrollToTop from './shared/components/ScrollToTop';
 import ContactFooter from './shared/components/ContactFooter';
 import SocialBuble from './shared/components/SocialBuble';
 import AnchorOnTop from './shared/components/AnchorOnTop';
+import CustomLoader from './shared/components/CustomLoader';
 
 const NotFound = lazy(() => import('./pages/NotFound/NotFound'));
 const ITLaw = lazy(() => import('./pages/Offers/ITLaw'));
@@ -38,7 +38,7 @@ const CallbackModal = lazy(() => import('./shared/components/CallbackModal'));
 function App() {
   return (
     <div className={s.app}>
-      <Suspense fallback={<CircularProgress />}>
+      <Suspense fallback={<CustomLoader />}>
         <Header />
         <div className={s.app__body}>
           <SideBar />
