@@ -1,14 +1,17 @@
 import React from 'react';
+import {FacebookShareButton, TwitterShareButton} from 'react-share';
 // Material UI
 import {Button, makeStyles, Link} from '@material-ui/core';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import TwitterIcon from '@material-ui/icons/Twitter';
 import cx from 'classnames';
 // Styles
+import {useLocation} from 'react-router';
 import s from './style.module.scss';
 // Components
 import PageWrapper from '../../../shared/components/PageWrapper';
 import Banner from '../../../shared/components/Banner';
+import {baseUrl} from '../../../core/_consts';
 
 const useStyles = makeStyles(() => ({
   socialItem: {
@@ -32,6 +35,7 @@ const useStyles = makeStyles(() => ({
 }));
 
 const Article = ({children, PageTitle, foto, breadCrumbsRoutes}) => {
+  const location = useLocation();
   const classes = useStyles();
   return (
     <PageWrapper pageTitle={PageTitle} breadCrumbsRoutes={breadCrumbsRoutes}>
@@ -54,23 +58,16 @@ const Article = ({children, PageTitle, foto, breadCrumbsRoutes}) => {
           </div>
           <p>Если статья была Вам полезна, Вы можете поделиться ею:</p>
           <div className={s.footer__social}>
-            <Button
-              component={Link}
-              target="_blank"
-              href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse"
-              rel="noreferrer"
-            >
-              <FacebookIcon className={cx(classes.socialItem, classes.facebook)} />
-            </Button>
-            <Button
-              component={Link}
-              target="_blank"
-              href="https://twitter.com/share?ref_src=twsrc%5Etfw"
-              className="twitter-share-button"
-              data-show-count="false"
-            >
-              <TwitterIcon className={cx(classes.socialItem, classes.twitter)} />
-            </Button>
+            <FacebookShareButton url={`${baseUrl + location.pathname}/`}>
+              <Button component={Link} target="_blank" rel="noreferrer">
+                <FacebookIcon className={cx(classes.socialItem, classes.facebook)} />
+              </Button>
+            </FacebookShareButton>
+            <TwitterShareButton title={PageTitle} via="twitter" url={`${baseUrl + location.pathname}/`}>
+              <Button component={Link} target="_blank" className="twitter-share-button" data-show-count="false">
+                <TwitterIcon className={cx(classes.socialItem, classes.twitter)} />
+              </Button>
+            </TwitterShareButton>
           </div>
         </div>
       </div>
