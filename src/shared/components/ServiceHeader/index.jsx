@@ -1,12 +1,9 @@
-/* eslint-disable no-shadow */
-/* eslint-disable jsx-a11y/click-events-have-key-events */
-/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 // import {useState} from 'react';
 import {connect} from 'react-redux';
 // import {makeStyles} from '@material-ui/core/styles';
 import s from './ServiceHeader.module.scss';
 // import DocumenView from '../DocumentView';
-import DocumentImage from '../../media/mainPageSlider/first.jpg';
+import {ReactComponent as OfferPreview} from '../../media/Offers/calc.svg';
 import CustomButton from '../CustomButton';
 import {actionSetModalState} from '../../../store/modal-service/actions';
 
@@ -23,7 +20,7 @@ const ServiceHeader = ({prices, setModalState}) => (
     <p className={s.serviceHeader__title}>Стоимость услуг</p>
     <div className={s.preview}>
       <div className={s.preview__document}>
-        <img className={s.preview__image} src={DocumentImage} alt="preview" />
+        <OfferPreview className={s.preview__image} />
         {/* onClick={() => setIsViewOpened(true)} */}
       </div>
       <div className={s.prices}>
