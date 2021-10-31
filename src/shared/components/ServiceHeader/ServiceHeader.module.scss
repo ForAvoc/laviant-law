@@ -1,3 +1,5 @@
+@import '../../../assets/scss/mixins';
+
 .serviceHeader {
   display: flex;
   flex-direction: column;
@@ -13,12 +15,20 @@
 
 .preview {
   display: flex;
-  height: 375px;
+  height: auto;
   background-color: white;
+
+  @include maxW_550 {
+    flex-direction: column;
+  }
 
   &__document {
     width: 315px;
     padding: 32px;
+
+    @include maxW_550 {
+      width: 100%;
+    }
   }
 
   &__image {
@@ -36,6 +46,10 @@
   padding: 32px;
   border: 1px solid #f7f8f9;
   border-width: 0 1px;
+
+  @include maxW_550 {
+    width: 100%;
+  }
 
   &__cost {
     color: #4c555c;
