@@ -1,0 +1,86 @@
+@import '../../assets/scss/mixins';
+
+.notFound {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 9000;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 1.25rem;
+  min-width: 100vw;
+  overflow: hidden;
+  min-height: 100vh;
+  background-color: #8766e4;
+
+  @include minW_1024 {
+    padding: 5rem;
+  }
+
+  &__container {
+    position: relative;
+    display: flex;
+    flex: 1;
+    min-height: 90vh;
+    min-width: 90vw;
+    border-radius: 1.5rem;
+    background-color: white;
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000),
+      0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    padding: 2.5rem;
+    align-items: center;
+    text-align: center;
+
+    @include minW_1024 {
+      padding: 5rem;
+    }
+
+    @include minW_768 {
+      display: flex;
+      text-align: left;
+    }
+  }
+
+  &__body {
+    width: 100%;
+
+    @include minW_768 {
+      width: 20%;
+    }
+  }
+
+  &__header {
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+    color: #8766e4;
+
+    @include minW_768 {
+      margin-bottom: 5rem;
+    }
+  }
+
+  &__title {
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+    color: #8766e4;
+    margin-bottom: 2.5rem;
+
+    @include minW_1024 {
+      font-size: 3rem;
+      line-height: 1;
+    }
+  }
+
+  &__backHome {
+    margin-bottom: 5rem;
+
+    @include minW_768 {
+      margin-bottom: 0rem;
+    }
+  }
+}

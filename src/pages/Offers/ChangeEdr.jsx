@@ -47,6 +47,8 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
+const prices = [{cost: 'от 500 грн', offerType: 'за одно изменение'}];
+
 const ChangeEdr = () => {
   const breadCrubmsRoutes = useMemo(
     () => [
@@ -60,7 +62,7 @@ const ChangeEdr = () => {
   return (
     <div className="offer">
       <PageWrapper breadCrumbsRoutes={breadCrubmsRoutes} pageTitle="Внесение изменений в Единый государственный реестр">
-        <OffersWrapper foto={foto}>
+        <OffersWrapper prices={prices} foto={foto}>
           <div className="offer__description">
             <Typography className={classes.paragraph} variant="subtitle1">
               Перерегистрация подразумевает под собой набор юридических действий, необходимый для изменения тех или иных

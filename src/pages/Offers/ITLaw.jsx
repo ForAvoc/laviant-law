@@ -4,6 +4,8 @@ import ROUTERS from '../../core/_consts/routes';
 import OffersWrapper from './OffersWrapper';
 import foto from '../../shared/media/Offers/ITLaw.jpg';
 
+const prices = [{cost: 'от 1300 грн', offerType: 'регистрация ФОП'}];
+
 const ITLaw = () => {
   const breadCrubmsRoutes = useMemo(
     () => [
@@ -16,7 +18,7 @@ const ITLaw = () => {
   return (
     <div className="offer">
       <PageWrapper breadCrumbsRoutes={breadCrubmsRoutes} pageTitle="IT право">
-        <OffersWrapper foto={foto}>
+        <OffersWrapper prices={prices} foto={foto}>
           <div className="offer__description">
             <p className="offer__title">Что мы делаем?</p>
             <p className="offer__paragraph ">

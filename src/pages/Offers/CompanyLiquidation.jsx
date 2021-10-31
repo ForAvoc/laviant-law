@@ -4,6 +4,8 @@ import ROUTERS from '../../core/_consts/routes';
 import OffersWrapper from './OffersWrapper';
 import foto from '../../shared/media/Offers/CompanyLiquidation.jpg';
 
+const prices = [{cost: 'от 7000 грн', offerType: ''}];
+
 const CompanyLiquidation = () => {
   const breadCrubmsRoutes = useMemo(
     () => [
@@ -12,11 +14,7 @@ const CompanyLiquidation = () => {
     ],
     []
   );
-  const prices = [
-    {cost: '10 000', offerType: 'Стандарт'},
-    {cost: '12 000', offerType: 'Премиум'},
-    {cost: '20 000', offerType: 'Премиум +'},
-  ];
+
   return (
     <div className="offer">
       <PageWrapper breadCrumbsRoutes={breadCrubmsRoutes} pageTitle="Ликвидация бизнеса">

@@ -47,6 +47,8 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
+const prices = [{cost: 'от 2000 грн', offerType: ''}];
+
 const BuyCompany = () => {
   const breadCrubmsRoutes = useMemo(
     () => [
@@ -61,7 +63,7 @@ const BuyCompany = () => {
   return (
     <div className="offer">
       <PageWrapper breadCrumbsRoutes={breadCrubmsRoutes} pageTitle="Купить компанию">
-        <OffersWrapper foto={foto}>
+        <OffersWrapper prices={prices} foto={foto}>
           <div className="offer__description">
             <Typography className={classes.paragraph} variant="subtitle1">
               Часто компания нужна как можно быстрее и нет времени ждать, пока будет проведена регистрация, получен

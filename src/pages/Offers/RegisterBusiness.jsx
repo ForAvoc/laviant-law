@@ -47,6 +47,8 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
+const prices = [{cost: 'от 2500 грн', offerType: 'регистрация ФХ'}];
+
 const RegisterBusiness = () => {
   const breadCrubmsRoutes = useMemo(
     () => [
@@ -55,12 +57,13 @@ const RegisterBusiness = () => {
     ],
     []
   );
+
   const classes = useStyles();
 
   return (
     <div className="offer">
       <PageWrapper breadCrumbsRoutes={breadCrubmsRoutes} pageTitle="Регистрация бизнеса">
-        <OffersWrapper foto={foto}>
+        <OffersWrapper prices={prices} foto={foto}>
           <div className="offer__description">
             <Typography className={classes.paragraph} variant="subtitle1">
               <span className={classes.strongSpan}>Зачем нужна регистрация бизнеса?</span>

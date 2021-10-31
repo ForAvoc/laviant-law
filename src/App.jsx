@@ -1,5 +1,4 @@
-import React from 'react';
-import {Switch, Redirect, Route, useLocation} from 'react-router-dom';
+import {Switch, Route} from 'react-router-dom';
 import ROUTERS from './core/_consts/routes';
 import s from './App.module.scss';
 import SideBar from './shared/components/SideBar';
@@ -31,10 +30,9 @@ import BusinessSupport from './pages/Offers/BusinessSupport';
 import CompanyLiquidation from './pages/Offers/CompanyLiquidation';
 import ChangeEdr from './pages/Offers/ChangeEdr';
 import ITLaw from './pages/Offers/ITLaw';
+import NotFound from './pages/NotFound/NotFound';
 
 function App() {
-  const location = useLocation();
-
   return (
     <div className={s.app}>
       <Header />
@@ -42,7 +40,7 @@ function App() {
         <SideBar />
         <div className={s.app__content}>
           <ScrollToTop />
-          <Switch location={location}>
+          <Switch>
             <Route exact path={ROUTERS.HOME} component={HomePage} />
             <Route exact path={ROUTERS.PUBLICATIONS} component={Publications} />
             <Route exact path={ROUTERS.REGISTER_BUSINESS} component={RegisterBusiness} />
@@ -65,7 +63,7 @@ function App() {
             <Route exact path={ROUTERS.COMPANY_LIQUIDATION} component={CompanyLiquidation} />
             <Route exact path={ROUTERS.CHANGE_EDR} component={ChangeEdr} />
             <Route exact path={ROUTERS.IT_LAW} component={ITLaw} />
-            <Redirect exact path="/" to={ROUTERS.HOME} />
+            <Route path={ROUTERS.NOT_FOUND} component={NotFound} />
           </Switch>
         </div>
       </div>

@@ -47,6 +47,13 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
+const prices = [
+  {cost: 'от 5000 грн', offerType: 'охранная'},
+  {cost: 'от 1500$', offerType: 'строительная'},
+  {cost: 'от 20 000 грн', offerType: 'на поставку электроэнергии/газа'},
+  {cost: 'от 2500 грн', offerType: 'на розничную торговлю алкоголем/табачными изделиями'},
+];
+
 const GetLicense = () => {
   const breadCrubmsRoutes = useMemo(
     () => [
@@ -60,7 +67,7 @@ const GetLicense = () => {
   return (
     <div className="offer">
       <PageWrapper breadCrumbsRoutes={breadCrubmsRoutes} pageTitle="Получить лицензию">
-        <OffersWrapper foto={foto}>
+        <OffersWrapper prices={prices} foto={foto}>
           <div className="offer__description">
             <Typography className={classes.paragraph} variant="subtitle1">
               Законодательством Украины предусмотрено обязательное лицензирование отдельных видов деятельности субъектов

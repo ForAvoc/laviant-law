@@ -4,6 +4,11 @@ import OffersWrapper from './OffersWrapper';
 import ROUTERS from '../../core/_consts/routes';
 import foto from '../../shared/media/Offers/BusinessSupport.jpg';
 
+const prices = [
+  {cost: 'от 800 грн в месяц', offerType: 'Бухгалтерское'},
+  {cost: 'от 3000 грн в месяц', offerType: 'Абонентское'},
+];
+
 const BusinessSupport = () => {
   const breadCrubmsRoutes = useMemo(
     () => [
@@ -12,11 +17,7 @@ const BusinessSupport = () => {
     ],
     []
   );
-  const prices = [
-    {cost: '10 000', offerType: 'Стандарт'},
-    {cost: '12 000', offerType: 'Премиум'},
-    {cost: '20 000', offerType: 'Премиум +'},
-  ];
+
   return (
     <div className="offer">
       <PageWrapper breadCrumbsRoutes={breadCrubmsRoutes} pageTitle="Сопровождение бизнеса">

@@ -70,3 +70,15 @@
   }
 }
 
+@mixin minW_1024 {
+  @media (min-width: 1024) {
+    @content;
+  }
+}
+
+@mixin minW_768 {
+  @media (min-width: 768) {
+    @content;
+  }
+}
+

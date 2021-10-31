@@ -24,6 +24,7 @@ const ROUTERS = {
   TAX_E_RESIDENCY5: '/publications/tax_e_residency',
   TAX_E_RESIDENCY6: '/publications/tax_e_residency',
   TAXATION_OOO: '/publications/taxation-OOO',
+  NOT_FOUND: '*',
 };
 
 export default ROUTERS;

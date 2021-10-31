@@ -47,6 +47,8 @@ const useStyles = makeStyles(() => ({
   },
 }));
 
+const prices = [{cost: 'договорная', offerType: 'в зависимости от типа компании и страны регистрации'}];
+
 const RegisterBusinessAbroad = () => {
   const breadCrubmsRoutes = useMemo(
     () => [
@@ -60,7 +62,7 @@ const RegisterBusinessAbroad = () => {
   return (
     <div className="offer">
       <PageWrapper breadCrumbsRoutes={breadCrubmsRoutes} pageTitle="Регистрация бизнеса в инностранных юрисдикциях">
-        <OffersWrapper foto={foto}>
+        <OffersWrapper prices={prices} foto={foto}>
           <div className="offer__description">
             <Typography className={classes.paragraph} variant="subtitle1">
               Процесс создания бизнеса в любой иностранной юрисдикции невозможен без сопровождения юристов. Это
